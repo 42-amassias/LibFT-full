@@ -46,6 +46,7 @@ FLAG__INCLUDES	:=	$(FLAG__INCLUDES)		\
 	-I$(INC_DIR)/ft_printf
 FILES_SROUCES	:=	$(FILES_SROUCES)		\
 	ft_printf/ft_printf						\
+	ft_printf/ft_vprintf					\
 	ft_printf/utils							\
 	ft_printf/flags/align_sign				\
 	ft_printf/flags/force_sign				\

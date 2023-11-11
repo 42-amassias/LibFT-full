@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:36:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 12:09:09 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:32:41 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,26 @@ static int	_len(
  * @date 2023-11-06
  * @todo Make documentation.
  */
-static void	_print_hex(
-				const char *charset, size_t n);
+static void	_print_hex_fd(
+				int fd,
+				const char *charset,
+				size_t n);
 
 /**
  * @brief 
+ * @param fd
  * @param fmt 
  * @param n 
- * @param pn 
  * @param u 
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @todo Make documentation.
  */
-static void	_print(
-				t_format *fmt, size_t n, int pn, int u);
+static void	_print_fd(
+				int fd,
+				t_format *fmt,
+				size_t n,
+				int u);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -94,7 +99,8 @@ static void	_print(
 /*                                                                            */
 /* ************************************************************************** */
 
-int	hex_printer(
+int	hex_printer_fd(
+		int fd,
 		t_format *fmt,
 		size_t n,
 		int u)
@@ -118,7 +124,7 @@ int	hex_printer(
 		fmt->precision = fmt->width - number_size;
 	fmt->precision = max(0, fmt->precision);
 	fmt->width = max(0, fmt->width - number_size - fmt->precision);
-	_print(fmt, n, number_size != 0, u);
+	_print_fd(fd, fmt, n, u);
 	return (prefix + number_size + fmt->width + fmt->precision);
 }
 
@@ -151,10 +157,10 @@ static void	_print_hex(
 	ft_putchar_fd(charset[n & 0xf], 1);
 }
 
-static void	_print(
+static void	_print_fd(
+				int fd,
 				t_format *fmt,
 				size_t n,
-				int pn,
 				int u)
 {
 	char	*charset;
@@ -163,13 +169,13 @@ static void	_print(
 	if (u)
 		charset = U_CHARSET;
 	if (!fmt__left_justify(fmt))
-		putnchar(' ', fmt->width);
+		putnchar_fd(fd, ' ', fmt->width);
 	if (fmt__hex_prefix(fmt)
 		&& (!fmt__precision(fmt) || fmt->precision >= 0 || n))
 		ft_putstr_fd(&charset[sizeof(L_CHARSET) - 3], 1);
-	putnchar('0', fmt->precision);
-	if (pn)
+	putnchar_fd(fd, '0', fmt->precision);
+	if (!fmt__precision(fmt) || fmt->precision != 0 || n != 0)
 		_print_hex(charset, n);
 	if (fmt__left_justify(fmt))
-		putnchar(' ', fmt->width);
+		putnchar_fd(fd, ' ', fmt->width);
 }

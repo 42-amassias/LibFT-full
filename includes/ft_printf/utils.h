@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 13:10:00 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:41:57 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,10 @@ typedef struct s_format	t_format;
  * @date 2023-11-06
  * @todo Make documentation.
  */
-void	putnchar(char c, int count);
+void	putnchar_fd(
+			int fd,
+			char c,
+			int count);
 
 /**
  * @brief 
@@ -144,7 +147,9 @@ void	putnchar(char c, int count);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		max(int a, int b);
+int		max(
+			int a,
+			int b);
 
 /**
  * @brief 
@@ -155,7 +160,24 @@ int		max(int a, int b);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		min(int a, int b);
+int		min(
+			int a,
+			int b);
+
+/**
+ * @brief 
+ * @param fd 
+ * @param fmt 
+ * @param args 
+ * @return int 
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-11
+ * @todo Make documentation.
+ */
+int		ft_vprintf(
+			int fd,
+			const char *fmt,
+			va_list *args);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -171,7 +193,8 @@ int		min(int a, int b);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		fmt__left_justify(t_format *fmt);
+int		fmt__left_justify(
+			t_format *fmt);
 
 /**
  * @brief 
@@ -181,7 +204,8 @@ int		fmt__left_justify(t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		fmt__force_sign(t_format *fmt);
+int		fmt__force_sign(
+			t_format *fmt);
 
 /**
  * @brief 
@@ -191,7 +215,8 @@ int		fmt__force_sign(t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		fmt__align_sign(t_format *fmt);
+int		fmt__align_sign(
+			t_format *fmt);
 
 /**
  * @brief 
@@ -201,7 +226,8 @@ int		fmt__align_sign(t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		fmt__hex_prefix(t_format *fmt);
+int		fmt__hex_prefix(
+			t_format *fmt);
 
 /**
  * @brief 
@@ -211,7 +237,8 @@ int		fmt__hex_prefix(t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		fmt__zero_padding(t_format *fmt);
+int		fmt__zero_padding(
+			t_format *fmt);
 
 /**
  * @brief 
@@ -221,7 +248,8 @@ int		fmt__zero_padding(t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		fmt__precision(t_format *fmt);
+int		fmt__precision(
+			t_format *fmt);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -231,6 +259,7 @@ int		fmt__precision(t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param fmt 
  * @param n 
  * @param u 
@@ -239,10 +268,14 @@ int		fmt__precision(t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		hex_printer(t_format *fmt, size_t n, int u);
+int		hex_printer_fd(
+			int fd,
+			t_format *fmt,
+			size_t n, int u);
 
 /**
  * @brief 
+ * @param fd
  * @param fmt 
  * @param str 
  * @return int 
@@ -250,10 +283,14 @@ int		hex_printer(t_format *fmt, size_t n, int u);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		string_printer(t_format *fmt, char *str);
+int		string_printer_fd(
+			int fd,
+			t_format *fmt,
+			char *str);
 
 /**
  * @brief 
+ * @param fd
  * @param fmt 
  * @param n 
  * @return int 
@@ -261,7 +298,10 @@ int		string_printer(t_format *fmt, char *str);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		number_printer(t_format *fmt, long n);
+int		number_printer_fd(
+			int fd,
+			t_format *fmt,
+			long n);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -271,6 +311,7 @@ int		number_printer(t_format *fmt, long n);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -278,10 +319,14 @@ int		number_printer(t_format *fmt, long n);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_char_printer(va_list *list, t_format *fmt);
+int		_char_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -289,10 +334,14 @@ int		_char_printer(va_list *list, t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_string_printer(va_list *list, t_format *fmt);
+int		_string_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -300,10 +349,14 @@ int		_string_printer(va_list *list, t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_pointer_printer(va_list *list, t_format *fmt);
+int		_pointer_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -311,10 +364,14 @@ int		_pointer_printer(va_list *list, t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_decimal_printer(va_list *list, t_format *fmt);
+int		_decimal_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -322,10 +379,14 @@ int		_decimal_printer(va_list *list, t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_integer_printer(va_list *list, t_format *fmt);
+int		_integer_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -333,10 +394,14 @@ int		_integer_printer(va_list *list, t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_unsigned_printer(va_list *list, t_format *fmt);
+int		_unsigned_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -344,10 +409,14 @@ int		_unsigned_printer(va_list *list, t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_lo_hex_printer(va_list *list, t_format *fmt);
+int		_lo_hex_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 /**
  * @brief 
+ * @param fd
  * @param list 
  * @param fmt 
  * @return int 
@@ -355,6 +424,9 @@ int		_lo_hex_printer(va_list *list, t_format *fmt);
  * @date 2023-11-06
  * @todo Make documentation.
  */
-int		_up_hex_printer(va_list *list, t_format *fmt);
+int		_up_hex_printer(
+			int fd,
+			va_list *list,
+			t_format *fmt);
 
 #endif

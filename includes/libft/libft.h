@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 18:55:10 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:36:03 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -556,6 +556,21 @@ void	ft_putnbr_fd(
 			int fd);
 
 # ifdef USE_LIB__FT_PRINTF
+
+/**
+ * @brief 
+ * @param fd 
+ * @param fmt 
+ * @param ... 
+ * @return int 
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-11
+ * @todo Make documentation.
+ */
+int		ft_fprintf(
+			int fd,
+			const char *fmt,
+			...);
 
 /**
  * @brief 

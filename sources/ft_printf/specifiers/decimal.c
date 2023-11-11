@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:53:46 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 12:58:16 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:13:53 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@
 /* ************************************************************************** */
 
 int	_decimal_printer(
+		int fd,
 		va_list *list,
 		t_format *fmt)
 {
 	int	n;
 
 	n = va_arg(*list, int);
-	return (number_printer(fmt, (long) n));
+	return (number_printer_fd(fd, fmt, (long) n));
 }

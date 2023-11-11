@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 02:55:50 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 12:58:07 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:11:37 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 /* ************************************************************************** */
 
 int	_char_printer(
+		int fd,
 		va_list *list,
 		t_format *fmt)
 {
@@ -41,10 +42,10 @@ int	_char_printer(
 		fmt->width = 1;
 	len = fmt->width--;
 	if (fmt__left_justify(fmt))
-		ft_putchar_fd(va_arg(*list, int), 1);
+		ft_putchar_fd(va_arg(*list, int), fd);
 	while (fmt->width--)
-		ft_putchar_fd(' ', 1);
+		ft_putchar_fd(' ', fd);
 	if (!fmt__left_justify(fmt))
-		ft_putchar_fd(va_arg(*list, int), 1);
+		ft_putchar_fd(va_arg(*list, int), fd);
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:15:03 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 18:57:37 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:33:53 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@
  * @date 2023-11-06
  * @todo Make documentation
  */
-static void	_putnstr(
+static void	_putnstr_fd(
+				int fd,
 				const char *str,
 				size_t len);
 
@@ -42,7 +43,8 @@ static void	_putnstr(
 /*                                                                            */
 /* ************************************************************************** */
 
-int	string_printer(
+int	string_printer_fd(
+		int fd,
 		t_format *fmt,
 		char *str)
 {
@@ -55,10 +57,10 @@ int	string_printer(
 	fmt->width = max(0, fmt->width - slen);
 	len = slen + fmt->width;
 	if (fmt__left_justify(fmt))
-		_putnstr(str, slen);
-	putnchar(' ', fmt->width);
+		_putnstr_fd(fd, str, slen);
+	putnchar_fd(fd, ' ', fmt->width);
 	if (!fmt__left_justify(fmt))
-		_putnstr(str, slen);
+		_putnstr_fd(fd, str, slen);
 	return (len);
 }
 
@@ -68,10 +70,11 @@ int	string_printer(
 /*                                                                            */
 /* ************************************************************************** */
 
-static void	_putnstr(
+static void	_putnstr_fd(
+				int fd,
 				const char *str,
 				size_t len)
 {
 	while (len--)
-		ft_putchar_fd(*str++, 1);
+		ft_putchar_fd(*str++, fd);
 }
