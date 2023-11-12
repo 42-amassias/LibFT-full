@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:29:11 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 13:02:21 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:47:13 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,11 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param c 
- * @return int 
+ * @brief Tells whether or not `c` is a space.
+ * @param c A character.
+ * @return whether or not `c` is a space.
  * @author amassias (amssias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation
  */
 static int	ft_isspace(
 				char c);

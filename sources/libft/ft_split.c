@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 05:37:05 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 11:42:37 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:32:21 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,31 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param str 
- * @param c 
- * @return size_t 
+ * @brief Counts how many tokens separated by `c` are in `str`.
+ * @param str A string.
+ * @param c The separator.
+ * @return how many tokens separated by `c` are in `str`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static size_t		count_strings(
 						const char *str,
 						char c);
 
 /**
- * @brief 
- * @param dst 
- * @param src 
- * @param c 
- * @return const char* 
+ * @brief Duplicates the next sub string in `src` in which there is not the
+ * character `c`, puts it in `*dst` then returns a pointer to the character
+ * following this substring in `str`.<br>If an error occured, `*dst` is set to
+ * `NULL` and the function will return `NULL`.
+ * @param dst A pointer to a string. `*dst` must not contain a pointer to an
+ * allocated memory area, otherwise it will be lost.
+ * @param src The string in from which the substring will be duplicated.
+ * @param c The separator.
+ * @return A pointer to the charater following the substring within `str` or
+ * `NULL` if an error occured.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @note If `*dst` is not `NULL`, it will have to be freed (man 3 free).
  */
 static const char	*dup_until_c(
 						char **dst,
@@ -61,12 +65,12 @@ static const char	*dup_until_c(
 						char c);
 
 /**
- * @brief 
- * @param strs 
- * @param len 
+ * @brief Frees `len` string from `*strs` then frees `*strs` then sets `*strs`
+ * to `NULL`.
+ * @param strs A pointer to a list of strings.
+ * @param len The number of strings to free within `*strs`
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static void			free_strs(
 						char ***strs,
@@ -96,10 +100,7 @@ char	**ft_split(
 		{
 			s = dup_until_c(strs + i++, s, c);
 			if (!s)
-			{
-				free_strs(&strs, i - 1);
-				return (NULL);
-			}
+				return (free_strs(&strs, i - 1), NULL);
 		}
 	}
 	return (strs);

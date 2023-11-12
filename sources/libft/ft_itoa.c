@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 22:26:44 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 13:03:10 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:49:54 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,17 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param _n 
- * @param len 
- * @param out 
+ * @brief Writes at most `len` digits of `n` into `out`.
+ * @param n The number to write.
+ * @param len The size of `buf`.
+ * @param buf A buffer in which to write `n`.
  * @author amassias (amassias@42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static void	itoa(
-				int _n,
+				int n,
 				int len,
-				char *out);
+				char *buf);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -86,7 +85,7 @@ char	*ft_itoa(
 static void	itoa(
 				int _n,
 				int len,
-				char *out)
+				char *buf)
 {
 	long	n;
 
@@ -94,13 +93,13 @@ static void	itoa(
 	if (n < 0)
 	{
 		n = -n;
-		*out++ = '-';
+		*buf++ = '-';
 		--len;
 	}
-	out[len] = '\0';
+	buf[len] = '\0';
 	while (len--)
 	{
-		out[len] = '0' + n % 10;
+		buf[len] = '0' + n % 10;
 		n /= 10;
 	}
 }

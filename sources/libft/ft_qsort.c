@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 07:52:05 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 11:28:15 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:55:40 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,17 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param base 
- * @param nmemb 
- * @param size 
- * @param cmp 
- * @return void* 
+ * @brief Choses an element (p) in `base` then rearanges `base` such that every
+ * element that is greater (according to `cmp`) than (p) is put after (p) and
+ * every element that is less than (according to `cmp`) (p) is but before (p).
+ * @param base An array.
+ * @param nmemb The number of elements in `base`.
+ * @param size The size (in bytes) of an element.
+ * @param cmp A comparator.
+ * @return A pointer within `base` to the pivot (p).
+ * @see t_comparator
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static void	*_partition(
 				void *base,
@@ -73,7 +75,11 @@ void	ft_qsort(
 	ft_qsort((char *)pivot + size, nmemb - len - 1, size, cmp);
 }
 
-//TODO add separator
+/* ************************************************************************** */
+/*                                                                            */
+/* Helper implementations                                                     */
+/*                                                                            */
+/* ************************************************************************** */
 
 static void	*_partition(
 				void *base,

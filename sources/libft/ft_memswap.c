@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:55:02 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 11:26:37 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:50:47 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,11 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param a 
- * @param b 
+ * @brief Swaps one byte of `a` and `b`.
+ * @param a A memory area.
+ * @param b A memory area.
  * @author amassias (amsssias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static void	swap(
 				unsigned char *a,

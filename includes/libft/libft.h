@@ -6,15 +6,14 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:36:03 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:40:00 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @copyright Copyright (c) 2023
  */
 
 #ifndef LIBFT_H
@@ -37,15 +36,21 @@
 
 /**
  * @struct s_list
- * @brief 
+ * @brief A node of a sigly linked list.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make description.
  */
 struct
 	s_list
 {
+	/**
+	 * @brief The content of this node.
+	 */
 	void			*content;
+
+	/**
+	 * @brief A pointer to the next node of the list.
+	 */
 	struct s_list	*next;
 };
 
@@ -58,15 +63,22 @@ struct
 /**
  * @typedef t_list
  * @copydoc s_list
+ * @see s_list
  */
 typedef struct s_list	t_list;
 
 /**
  * @typedef t_comparator
- * @brief 
+ * @brief A function that compares two elements.
+ * <br>If `a` is greater than `b` according to this funciton, it will return a
+ * positive integer.
+ * <br>If `a` is less than `b` according to this funciton, it will return a
+ * negative integer.
+ * <br>If `a` equals `b`, it will return `0`.
+ * @param a A pointer to an element.
+ * @param b A pointer to an element.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make description.
  */
 typedef int				(*t_comparator)(void *, void *);
 
@@ -558,14 +570,171 @@ void	ft_putnbr_fd(
 # ifdef USE_LIB__FT_PRINTF
 
 /**
- * @brief 
- * @param fd 
- * @param fmt 
- * @param ... 
- * @return int 
+ * @brief Writes a formated string to the file
+ * descriptor `fd`.
+ * <br><b>FORMAT</b><br>
+ * The formated string is just `fmt` with every formaters evaluated.
+ * <br>A formater is of the form
+ * `%[flags][width][.precision]specifier`.
+ * <br>
+ * Where the specifier character at the end is the most significant component,
+ * since it defines the type and the interpretation of its corresponding
+ * argument:
+ * <table>
+ *  <tr>
+ *   <th> Specifier </th>
+ *   <th> Output </th>
+ *   <th> Example </th>
+ *  </tr>
+ *  <tr>
+ *   <td> d <b>or</b> i </td>
+ *   <td> Signed decimal integer </td>
+ *   <td> -42 </td>
+ *  </tr>
+ *  <tr>
+ *   <td> u </td>
+ *   <td> Unsigned decimal integer </td>
+ *   <td> 69 </td>
+ *  </tr>
+ *  <tr>
+ *   <td> x </td>
+ *   <td> Unsigned hexadecimal integer </td>
+ *   <td> 2a </td>
+ *  </tr>
+ *  <tr>
+ *   <td> X </td>
+ *   <td> Unsigned hexadecimal integer (Uppercase) </td>
+ *   <td> DEADBEEF </td>
+ *  </tr>
+ *  <tr>
+ *   <td> c </td>
+ *   <td> Character </td>
+ *   <td> a </td>
+ *  </tr>
+ *  <tr>
+ *   <td> s </td>
+ *   <td> String of characters </td>
+ *   <td> 42 da best ! </td>
+ *  </tr>
+ *  <tr>
+ *   <td> p </td>
+ *   <td> Pointer address </td>
+ *   <td> 0x7fffffabcdef </td>
+ *  </tr>
+ *  <tr>
+ *   <td> % </td>
+ *   <td> A % followed by an other % will write a single % to the file
+ * descriptor </td>
+ *   <td> % </td>
+ *  </tr>
+ * </table>
+ * The format specifier can also contain sub-specifiers: `flags`, `width`,
+ * `.precision` and `modifiers` (in that order), which are optional and follow
+ * these specifications:
+ * <table>
+ *  <tr>
+ *   <th> Flags </th>
+ *   <th> Description </th>
+ *  </tr>
+ *  <tr>
+ *   <td> - </td>
+ *   <td> Left-justify within the given field width; Right justification is the
+ * default (see `width` sub-specifier) </td>
+ *  </tr>
+ *  <tr>
+ *   <td> + </td>
+ *   <td> Forces to preceed the result with a plus or minus sign (`+` or `-`)
+ * even for positive numbers. By default, only negative numbers are preceded
+ * with a `-` sign. </td>
+ *  </tr>
+ *  </tr>
+ *  <tr>
+ *   <td> `(space)` </td>
+ *   <td> If no sign is going to be written, a blank space is inserted before
+ * the value. </td>
+ *  </tr>
+ *  </tr>
+ *  <tr>
+ *   <td> # </td>
+ *   <td> Used with `x` or `X` specifiers the value is preceeded with `0x` or
+ * `0X` respectively for values different than zero. </td>
+ *  </tr>
+ *  </tr>
+ *  <tr>
+ *   <td> 0 </td>
+ *   <td> Left-pads the number with zeroes (0) instead of spaces when padding is
+ * specified (see `width` sub-specifier). </td>
+ *  </tr>
+ *  </tr>
+ * </table>
+ * <table>
+ *  <tr>
+ *   <th> `width` </th>
+ *   <th> Description </th>
+ *  </tr>
+ *  <tr>
+ *   <td> `(number)` </td>
+ *   <td> Minimum number of characters to be printed. If the value to be printed
+ * is shorter than this number, the result is padded with blank spaces. The
+ * value is not truncated even if the result is larger. </td>
+ *  </tr>
+ * </table>
+ * <table>
+ *  <tr>
+ *   <th> `.precision` </th>
+ *   <th> Description </th>
+ *  </tr>
+ *  <tr>
+ *   <td> `.number` </td>
+ *   <td> For integer specifiers (d, i, u, x, X): `precision` specifies the
+ * minimum number of digits to be written. If the value to be written is shorter
+ * than this number, the result is padded with leading zeros. The value is not
+ * truncated even if the result is longer. A `precision` of 0 means that no
+ * character is written for the value 0.<br>
+For `s`: this is the maximum number of characters to be printed. By default all
+characters are printed until the ending null character is encountered.<br>
+If the period is specified without an explicit value for `precision`, 0 is
+assumed. </td>
+ *  </tr>
+ * </table>
+ * The `length` sub-specifier modifies the length of the data type. This is a
+ * chart showing the types used to interpret the corresponding arguments with
+ * and without `length` specifier (if a different type is used, the proper type
+ * promotion or conversion is performed, if allowed):
+ * <table>
+ *  <tr>
+ *   <th>  </th>
+ *   <th colspan="5"> Specifiers </th>
+ *  </tr>
+ *  <tr>
+ *   <td> <b>Length</b> </td>
+ *   <td> d i </td>
+ *   <td> u x X </td>
+ *   <td> c </td>
+ *   <td> s </td>
+ *   <td> p </td>
+ *  </tr>
+ *  <tr>
+ *   <td>  </td>
+ *   <td> int </td>
+ *   <td> unsigned int </td>
+ *   <td> int </td>
+ *   <td> char * </td>
+ *   <td> void * </td>
+ *  </tr>
+ * </table>
+ * @param fd The file descriptor on whoch to write the formated string.
+ * @param fmt The format to convert.
+ * @param ... Depending on the `fmt` string, the function may expect a sequence
+ * of additional arguments, each containing a value to be used to replace a
+ * format specifier in the format string.<br>
+ * There should be at least as many of these arguments as the number of values
+ * specified in `fmt` specifiers. Additional arguments are ignored by the
+ * function.
+ * @return On success, the total number of characters written is returned.<br>
+ * If a writing error occurs, a negative number is returned.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-11
- * @todo Make documentation.
  */
 int		ft_fprintf(
 			int fd,
@@ -573,13 +742,8 @@ int		ft_fprintf(
 			...);
 
 /**
- * @brief 
- * @param fmt 
- * @param ... 
- * @return int 
- * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- * @todo Make documentation.
+ * @copydoc ft_fprintf
+ * @note The file descriptor is set to stdout.
  */
 int		ft_printf(
 			const char *fmt,
