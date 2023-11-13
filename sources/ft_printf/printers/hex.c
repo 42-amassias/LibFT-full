@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:36:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 16:07:54 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:02:30 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,20 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
+ * @brief All the uppercase digits of hexadecimal followed by the uppercase
+ * hexadecimal prefix.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
  */
 #define U_CHARSET "0123456789ABCDEF0X"
 
 /**
- * @brief 
+ * @brief All the lowercase digits of hexadecimal followed by the lowercase
+ * hexadecimal prefix.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
  */
 #define L_CHARSET "0123456789abcdef0x"
 
@@ -54,23 +56,22 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param n 
- * @return int 
+ * @brief Computes the length in character of an hexadecimal number.
+ * @param n A number.
+ * @return The length of `n` in hexadecimal.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static int	_len(
 				size_t n);
 
 /**
- * @brief 
- * @param charset 
- * @param n 
+ * @brief Puts an hexadecimal number `n` onto the file descriptor `fd` using the
+ * charset `charset`.
+ * @param charset The charset to use to print the number.
+ * @param n The number to print.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static void	_print_hex_fd(
 				int fd,
@@ -78,14 +79,18 @@ static void	_print_hex_fd(
 				size_t n);
 
 /**
- * @brief 
- * @param fd
- * @param fmt 
- * @param n 
- * @param u 
+ * @brief Using the specified format `fmt`, puts a formatted hexadecimal number
+ * `n` to the file descriptor `fd`.
+ * @param fd The file descriptor on which to put the formatted hexadecimal
+ * number `n`.
+ * @param fmt The format to use.
+ * @param n The hexadecimal number to format.
+ * @param u Flag to indicate if the hexadecimal letters should be uppercase or
+ * lowercase.
+ * @return The number of characters put onto the file decriptor `fd`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
  */
 static void	_print_fd(
 				int fd,

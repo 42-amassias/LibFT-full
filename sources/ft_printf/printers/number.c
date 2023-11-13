@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:13:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/12 14:45:32 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:09:34 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,35 +34,38 @@
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param u 
- * @return int 
+ * @brief Computes the length in characters of the integer `u`. This does not
+ * take into account the sign of `u`.
+ * @param u An integer.
+ * @return The length in characters of `u`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static int	_len(
 				long u);
 
 /**
- * @brief 
- * @param n 
+ * @brief Puts an unsigned integer `n` onto the file descriptor `fd`.
+ * @param n The unsigned integer to print.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
  */
 static void	_print_number_fd(
 				int fd,
 				unsigned long n);
 
 /**
- * @brief 
- * @param fmt 
- * @param n 
- * @param pn 
+ * @brief Using the specified format `fmt`, puts a formatted integer `n` to the
+ * file descriptor `fd`.
+ * @param fd The file descriptor on which to put the formatted integer `n`.
+ * @param fmt The format to use.
+ * @param n The integer to format.
+ * @param pn Flag to indicate if the number should be printed or not.
+ * @return The number of characters put onto the file decriptor `fd`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
+ * @todo Get rid of the parameter `pn`.
  */
 static void	_print_fd(
 				int fd,
@@ -83,7 +86,7 @@ int	number_printer_fd(
 {
 	int	number_size;
 
-	if (fmt__precision(fmt) && fmt->precision == 0 && n == 0)
+	if (fmt__use_precision(fmt) && fmt->precision == 0 && n == 0)
 		number_size = 0;
 	else
 		number_size = _len(n);
@@ -92,7 +95,7 @@ int	number_printer_fd(
 		++number_size;
 	if (fmt__zero_padding(fmt)
 		&& !fmt__left_justify(fmt)
-		&& !fmt__precision(fmt))
+		&& !fmt__use_precision(fmt))
 		fmt->precision = fmt->width - number_size;
 	fmt->precision = max(0, fmt->precision);
 	fmt->width = max(0, fmt->width - number_size - fmt->precision);

@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 03:58:39 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:53:07 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:04:20 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	_string_printer(
 	str = va_arg(*list, char *);
 	if (str)
 		return (string_printer_fd(fd, fmt, str));
-	if (!fmt__precision(fmt)
+	if (!fmt__use_precision(fmt)
 		|| (unsigned long) fmt->precision + 1 >= sizeof(NULL_STRING))
 		return (string_printer_fd(fd, fmt, (char *) NULL_STRING));
 	return (string_printer_fd(fd, fmt, (char *) ""));

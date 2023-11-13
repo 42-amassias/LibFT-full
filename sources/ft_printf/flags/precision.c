@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:33:59 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 12:02:35 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:04:32 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	fmt__precision(
+int	fmt__use_precision(
 		t_format *fmt)
 {
-	return ((fmt->flags & FMT_FLAG__PRECISION) != 0);
+	return ((fmt->flags & FMT_FLAG__USE_PRECISION) != 0);
 }

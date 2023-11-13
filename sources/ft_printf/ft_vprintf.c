@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 08:09:45 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:40:42 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:53:49 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,14 @@
 
 /**
  * @typedef t_type_printer
- * @param fd
- * @param va_list
- * @param fmt
- * @return
+ * @brief Function callback type that formats a specifier.
+ * @param fd The file descriptor on which to put the formatted data.
+ * @param va_list A variadic list from which to pull data.
+ * @param fmt The format to use to format the data.
+ * @return The number of characters put onto the file descriptor `fd`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
 */
 typedef int	(*t_type_printer)(int, va_list *, t_format *);
 
@@ -59,39 +60,48 @@ typedef int	(*t_type_printer)(int, va_list *, t_format *);
 /* ************************************************************************** */
 
 /**
- * @brief 
- * @param str 
- * @param value_ptr 
+ * @brief Acts as `ft_atoi` except it does not recognize minus signs and does
+ * not skip white spaces, stores its result into `*value_ptr` and sets
+ * `*str_ptr` to the character following the number that has been read.
+ * @param str_ptr A pointer to the string from which to pull a number.
+ * @param value_ptr A pointer to where to store the number read from `*str_ptr`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_atoi
  */
 static void	_read_number(
-				const char **str,
+				const char **str_ptr,
 				int *value_ptr);
 
 /**
- * @brief 
- * @param fmt 
- * @param fmt_ptr 
- * @return int 
+ * @brief Read and convert a text format (i.e. "0#12.2x") into a `s_format`.
+ * It will also advance `*fmt_ptr` to the character after the specifier or, if
+ * an error occured during the parsing of the format, to where it failed.<br>
+ * This function will fail if it does not find a specifier or if the specifier
+ * is not recognized.
+ * @param fmt A pointer to a format to fill.
+ * @param fmt_ptr A pointer to the string containing the format to parse.
+ * @return 0 on success, any other value if an error occured.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
  */
 static int	_read_format(
 				t_format *fmt,
 				const char **fmt_ptr);
 
 /**
- * @brief 
- * @param fmt_ptr 
- * @param list 
- * @param printers 
- * @return int 
+ * @brief Read a format, advances `*fmt_ptr` right after the read format then
+ * formats data from a variadic list.
+ * @param fd The file descriptor on which to put the formated data.
+ * @param fmt_ptr A pointer to a format string.
+ * @param list A pointer to a variadic list from wich to pull data to format.
+ * @param printers A list of functions to format each specifiers.
+ * @return The number of characters put onto the file descriptor `fd`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
+ * @todo Give an other name to this function (maybe "_parse" or "_format").
  */
 static int	_handle(
 				int fd,
@@ -100,11 +110,11 @@ static int	_handle(
 				t_type_printer *printers);
 
 /**
- * @brief 
- * @param printers 
+ * @brief Builds a list of functions for each specifier.
+ * @param printers The list to build.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
- * @todo Make documentation.
+ * @see ft_fprintf
  */
 static void	_init_printers(
 				t_type_printer *printers);
@@ -115,16 +125,6 @@ static void	_init_printers(
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief 
- * @param fd 
- * @param fmt 
- * @param ... 
- * @return int 
- * @author amassias (amsssias@student.42lehavre.fr)
- * @date 2023-11-11
- * @todo Make documentation.
- */
 int	ft_vprintf(
 		int fd,
 		const char *fmt,
@@ -189,7 +189,7 @@ static int	_read_format(
 	{
 		++(*fmt_ptr);
 		_read_number(fmt_ptr, &fmt->precision);
-		fmt->flags |= FMT_FLAG__PRECISION;
+		fmt->flags |= FMT_FLAG__USE_PRECISION;
 	}
 	x = ft_strchr(SPECIFIERS, **fmt_ptr);
 	if (!*(*fmt_ptr)++ || !x)
