@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 05:25:18 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 18:12:41 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:25:22 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	printer__pointer(
 	n = *(long *)&ptr;
 	if (!n)
 		return (string_printer_fd(fd, fmt, "(nil)"));
-	fmt->flags |= FMT_FLAG__HEX_PREFIX;
+	fmt->flags |= FMT_FLAG__PREFIX;
 	return (hex_printer_fd(fd, fmt, n));
 }

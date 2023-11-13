@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:36:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:19:21 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:25:59 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,8 @@ int	hex_printer_fd(
 		number_size = _len(n);
 	fmt->precision -= number_size;
 	if (n == 0)
-		fmt->flags &= ~FMT_FLAG__HEX_PREFIX;
-	prefix = 2 * fmt__hex_prefix(fmt);
+		fmt->flags &= ~FMT_FLAG__PREFIX;
+	prefix = 2 * fmt__prefix(fmt);
 	if (prefix)
 		fmt->width -= 2;
 	if (fmt__zero_padding(fmt)
@@ -175,7 +175,7 @@ static void	_print_fd(
 		charset = U_CHARSET;
 	if (!fmt__left_justify(fmt))
 		putnchar_fd(fd, ' ', fmt->width);
-	if (fmt__hex_prefix(fmt)
+	if (fmt__prefix(fmt)
 		&& (!fmt__use_precision(fmt) || fmt->precision >= 0 || n))
 		ft_putstr_fd(&charset[sizeof(L_CHARSET) - 3], 1);
 	putnchar_fd(fd, '0', fmt->precision);

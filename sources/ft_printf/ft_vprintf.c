@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 08:09:45 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 18:13:24 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:19:03 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,4 +253,5 @@ static void	_init_printers(
 	printers[ft_strchr(SPECIFIERS, 'u') - SPECIFIERS] = printer__unsigned;
 	printers[ft_strchr(SPECIFIERS, 'x') - SPECIFIERS] = printer__lo_hex;
 	printers[ft_strchr(SPECIFIERS, 'X') - SPECIFIERS] = printer__up_hex;
+	printers[ft_strchr(SPECIFIERS, 'o') - SPECIFIERS] = printer__octal;
 }

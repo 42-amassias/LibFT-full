@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 18:13:15 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:25:59 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,14 @@
 # define FMT_FLAG__ALIGN_SIGN 0b000100
 
 /**
- * @brief Bitflag that indicates if the formatter should use the `hex prefix`
- * (`#`) flag.
+ * @brief Bitflag that indicates if the formatter should use the `prefix` (`#`)
+ * flag.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see s_format
  * @see ft_fprintf
  */
-# define FMT_FLAG__HEX_PREFIX 0b001000
+# define FMT_FLAG__PREFIX 0b001000
 
 /**
  * @brief Bitflag that indicates if the formatter should use the `zero padding`
@@ -252,7 +252,7 @@ int		fmt__align_sign(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		fmt__hex_prefix(
+int		fmt__prefix(
 			t_format *fmt);
 
 /**
