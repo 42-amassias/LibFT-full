@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 08:09:45 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:46:17 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:13:24 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,12 +245,12 @@ static int	_format(
 static void	_init_printers(
 				t_type_printer *printers)
 {
-	printers[0] = _char_printer;
-	printers[1] = _string_printer;
-	printers[2] = _pointer_printer;
-	printers[3] = _decimal_printer;
-	printers[4] = _integer_printer;
-	printers[5] = _unsigned_printer;
-	printers[6] = _lo_hex_printer;
-	printers[7] = _up_hex_printer;
+	printers[ft_strchr(SPECIFIERS, 'c') - SPECIFIERS] = printer__char;
+	printers[ft_strchr(SPECIFIERS, 's') - SPECIFIERS] = printer__string;
+	printers[ft_strchr(SPECIFIERS, 'p') - SPECIFIERS] = printer__pointer;
+	printers[ft_strchr(SPECIFIERS, 'd') - SPECIFIERS] = printer__decimal;
+	printers[ft_strchr(SPECIFIERS, 'i') - SPECIFIERS] = printer__integer;
+	printers[ft_strchr(SPECIFIERS, 'u') - SPECIFIERS] = printer__unsigned;
+	printers[ft_strchr(SPECIFIERS, 'x') - SPECIFIERS] = printer__lo_hex;
+	printers[ft_strchr(SPECIFIERS, 'X') - SPECIFIERS] = printer__up_hex;
 }

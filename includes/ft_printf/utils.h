@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:17:18 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:13:15 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -347,7 +347,7 @@ int		number_printer_fd(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_char_printer(
+int		printer__char(
 			int fd,
 			va_list *list,
 			t_format *fmt);
@@ -362,7 +362,7 @@ int		_char_printer(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_string_printer(
+int		printer__string(
 			int fd,
 			va_list *list,
 			t_format *fmt);
@@ -378,7 +378,7 @@ int		_string_printer(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_pointer_printer(
+int		printer__pointer(
 			int fd,
 			va_list *list,
 			t_format *fmt);
@@ -394,7 +394,7 @@ int		_pointer_printer(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_decimal_printer(
+int		printer__decimal(
 			int fd,
 			va_list *list,
 			t_format *fmt);
@@ -409,7 +409,7 @@ int		_decimal_printer(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_integer_printer(
+int		printer__integer(
 			int fd,
 			va_list *list,
 			t_format *fmt);
@@ -425,7 +425,7 @@ int		_integer_printer(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_unsigned_printer(
+int		printer__unsigned(
 			int fd,
 			va_list *list,
 			t_format *fmt);
@@ -442,7 +442,7 @@ int		_unsigned_printer(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_lo_hex_printer(
+int		printer__lo_hex(
 			int fd,
 			va_list *list,
 			t_format *fmt);
@@ -459,7 +459,7 @@ int		_lo_hex_printer(
  * @date 2023-11-06
  * @see ft_fprintf
  */
-int		_up_hex_printer(
+int		printer__up_hex(
 			int fd,
 			va_list *list,
 			t_format *fmt);

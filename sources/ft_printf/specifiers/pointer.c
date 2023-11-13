@@ -6,13 +6,13 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 05:25:18 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:19:31 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:12:41 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	_pointer_printer(
+int	printer__pointer(
 		int fd,
 		va_list *args,
 		t_format *fmt)

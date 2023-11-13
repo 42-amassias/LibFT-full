@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:53:46 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:13:53 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:12:48 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	_decimal_printer(
+int	printer__decimal(
 		int fd,
 		va_list *list,
 		t_format *fmt)

@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 03:58:39 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 16:04:20 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:12:28 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define NULL_STRING "(null)"
 
-int	_string_printer(
+int	printer__string(
 		int fd,
 		va_list *list,
 		t_format *fmt)

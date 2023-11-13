@@ -6,13 +6,13 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:55:10 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:19:44 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:13:09 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	_lo_hex_printer(
+int	printer__lo_hex(
 		int fd,
 		va_list *args,
 		t_format *fmt)

@@ -6,13 +6,13 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:33:38 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:16:26 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:12:57 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	_integer_printer(
+int	printer__integer(
 		int fd,
 		va_list *list,
 		t_format *fmt)
