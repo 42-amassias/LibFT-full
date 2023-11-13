@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 08:09:45 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 16:53:49 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:21:38 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,8 @@ static int	_read_format(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
- * @todo Give an other name to this function (maybe "_parse" or "_format").
  */
-static int	_handle(
+static int	_format(
 				int fd,
 				const char **fmt_ptr,
 				va_list *list,
@@ -143,7 +142,7 @@ int	ft_vprintf(
 			ft_putchar_fd(fmt[-1], fd);
 			continue ;
 		}
-		length += _handle(fd, &fmt, args, printers);
+		length += _format(fd, &fmt, args, printers);
 	}
 	return (length);
 }
@@ -198,7 +197,7 @@ static int	_read_format(
 	return (0);
 }
 
-static int	_handle(
+static int	_format(
 				int fd,
 				const char **fmt_ptr,
 				va_list *list,
