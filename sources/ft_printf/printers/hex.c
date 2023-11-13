@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:36:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:32:41 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:07:54 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	hex_printer_fd(
 	int	number_size;
 	int	prefix;
 
-	if (fmt__precision(fmt) && fmt->precision == 0 && n == 0)
+	if (fmt__use_precision(fmt) && fmt->precision == 0 && n == 0)
 		number_size = 0;
 	else
 		number_size = _len(n);
@@ -120,7 +120,7 @@ int	hex_printer_fd(
 		fmt->width -= 2;
 	if (fmt__zero_padding(fmt)
 		&& !fmt__left_justify(fmt)
-		&& !fmt__precision(fmt))
+		&& !fmt__use_precision(fmt))
 		fmt->precision = fmt->width - number_size;
 	fmt->precision = max(0, fmt->precision);
 	fmt->width = max(0, fmt->width - number_size - fmt->precision);
@@ -148,13 +148,14 @@ static int	_len(
 	return (len);
 }
 
-static void	_print_hex(
+static void	_print_hex_fd(
+				int fd,
 				const char *charset,
 				size_t n)
 {
 	if (n > 0xf)
-		_print_hex(charset, n >> 4);
-	ft_putchar_fd(charset[n & 0xf], 1);
+		_print_hex_fd(fd, charset, n >> 4);
+	ft_putchar_fd(charset[n & 0xf], fd);
 }
 
 static void	_print_fd(
@@ -171,10 +172,10 @@ static void	_print_fd(
 	if (!fmt__left_justify(fmt))
 		putnchar_fd(fd, ' ', fmt->width);
 	if (fmt__hex_prefix(fmt)
-		&& (!fmt__precision(fmt) || fmt->precision >= 0 || n))
+		&& (!fmt__use_precision(fmt) || fmt->precision >= 0 || n))
 		ft_putstr_fd(&charset[sizeof(L_CHARSET) - 3], 1);
 	putnchar_fd(fd, '0', fmt->precision);
-	if (!fmt__precision(fmt) || fmt->precision != 0 || n != 0)
+	if (!fmt__use_precision(fmt) || fmt->precision != 0 || n != 0)
 		_print_hex(charset, n);
 	if (fmt__left_justify(fmt))
 		putnchar_fd(fd, ' ', fmt->width);
