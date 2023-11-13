@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 08:09:45 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:21:38 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:46:17 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,13 @@ typedef int	(*t_type_printer)(int, va_list *, t_format *);
 /* ************************************************************************** */
 
 /**
- * @brief Acts as `ft_atoi` except it does not recognize minus signs and does
- * not skip white spaces, stores its result into `*value_ptr` and sets
+ * @brief If `**str_ptr` is '*', it will pull an integer from the variadic list.
+ * <br>Else, it acts as `ft_atoi` except it does not recognize minus signs and
+ * does not skip white spaces, stores its result into `*value_ptr` and sets
  * `*str_ptr` to the character following the number that has been read.
  * @param str_ptr A pointer to the string from which to pull a number.
+ * @param args A pointer to a variadic list from which to pull a number if
+ * needed.
  * @param value_ptr A pointer to where to store the number read from `*str_ptr`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
@@ -71,16 +74,19 @@ typedef int	(*t_type_printer)(int, va_list *, t_format *);
  */
 static void	_read_number(
 				const char **str_ptr,
+				va_list *args,
 				int *value_ptr);
 
 /**
- * @brief Read and convert a text format (i.e. "0#12.2x") into a `s_format`.
+ * @brief Read and convert a text format (i.e. "0#*.2x") into a `s_format`.
  * It will also advance `*fmt_ptr` to the character after the specifier or, if
  * an error occured during the parsing of the format, to where it failed.<br>
  * This function will fail if it does not find a specifier or if the specifier
  * is not recognized.
  * @param fmt A pointer to a format to fill.
  * @param fmt_ptr A pointer to the string containing the format to parse.
+ * @param args A variadic list from which to pull `width` and `precision` fields
+ * if needed.
  * @return 0 on success, any other value if an error occured.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
@@ -88,7 +94,8 @@ static void	_read_number(
  */
 static int	_read_format(
 				t_format *fmt,
-				const char **fmt_ptr);
+				const char **fmt_ptr,
+				va_list *args);
 
 /**
  * @brief Read a format, advances `*fmt_ptr` right after the read format then
@@ -155,10 +162,17 @@ int	ft_vprintf(
 
 static void	_read_number(
 				const char **str,
+				va_list *args,
 				int *value_ptr)
 {
 	int	x;
 
+	if (**str == '*')
+	{
+		++*str;
+		*value_ptr = va_arg(*args, int);
+		return ;
+	}
 	x = 0;
 	while (**str && ft_isdigit(**str))
 	{
@@ -170,7 +184,8 @@ static void	_read_number(
 
 static int	_read_format(
 				t_format *fmt,
-				const char **fmt_ptr)
+				const char **fmt_ptr,
+				va_list *args)
 {
 	char	*x;
 
@@ -183,11 +198,11 @@ static int	_read_format(
 		++(*fmt_ptr);
 		*((char *)&fmt->flags) |= 1 << (x - FLAGS);
 	}
-	_read_number(fmt_ptr, &fmt->width);
+	_read_number(fmt_ptr, args, &fmt->width);
 	if (**fmt_ptr && **fmt_ptr == '.')
 	{
 		++(*fmt_ptr);
-		_read_number(fmt_ptr, &fmt->precision);
+		_read_number(fmt_ptr, args, &fmt->precision);
 		fmt->flags |= FMT_FLAG__USE_PRECISION;
 	}
 	x = ft_strchr(SPECIFIERS, **fmt_ptr);
@@ -208,7 +223,7 @@ static int	_format(
 	int				len;
 	const char		*start;
 
-	if (_read_format(&format, fmt_ptr))
+	if (_read_format(&format, fmt_ptr, list))
 	{
 		start = *fmt_ptr;
 		while (*start != '%')
