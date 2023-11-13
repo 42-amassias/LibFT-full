@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:55:10 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:16:07 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:20:02 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	_up_hex_printer(
 
 	x = va_arg(*args, unsigned int);
 	fmt->flags &= ~(FMT_FLAG__ALIGN_SIGN | FMT_FLAG__FORCE_SIGN);
-	return (hex_printer_fd(fd, fmt, (size_t) x, 1));
+	return (hex_printer_fd(fd, fmt, (size_t) x));
 }

@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:02:39 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:17:18 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,19 +288,15 @@ int		fmt__use_precision(
  * number `n`.
  * @param fmt The format to use.
  * @param n The hexadecimal number to format.
- * @param u Flag to indicate if the hexadecimal letters should be uppercase or
- * lowercase.
  * @return The number of characters put onto the file decriptor `fd`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
- * @todo Get rid of the `u` variable as it can be determined from the format.
  */
 int		hex_printer_fd(
 			int fd,
 			t_format *fmt,
-			size_t n,
-			int u);
+			size_t n);
 
 /**
  * @brief Using the specified format, puts a formatted string `str` to the file

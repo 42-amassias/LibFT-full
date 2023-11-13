@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:36:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:02:30 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:19:21 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,7 @@ static void	_print_fd(
 int	hex_printer_fd(
 		int fd,
 		t_format *fmt,
-		size_t n,
-		int u)
+		size_t n)
 {
 	int	number_size;
 	int	prefix;
@@ -129,7 +128,7 @@ int	hex_printer_fd(
 		fmt->precision = fmt->width - number_size;
 	fmt->precision = max(0, fmt->precision);
 	fmt->width = max(0, fmt->width - number_size - fmt->precision);
-	_print_fd(fd, fmt, n, u);
+	_print_fd(fd, fmt, n, fmt->specifier == 'X');
 	return (prefix + number_size + fmt->width + fmt->precision);
 }
 
@@ -181,7 +180,7 @@ static void	_print_fd(
 		ft_putstr_fd(&charset[sizeof(L_CHARSET) - 3], 1);
 	putnchar_fd(fd, '0', fmt->precision);
 	if (!fmt__use_precision(fmt) || fmt->precision != 0 || n != 0)
-		_print_hex(charset, n);
+		_print_hex_fd(fd, charset, n);
 	if (fmt__left_justify(fmt))
 		putnchar_fd(fd, ' ', fmt->width);
 }
