@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/12 16:40:00 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/16 22:08:28 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -678,6 +678,12 @@ void	ft_putnbr_fd(
  * is shorter than this number, the result is padded with blank spaces. The
  * value is not truncated even if the result is larger. </td>
  *  </tr>
+ *  <tr>
+ *   <td> * </td>
+ *   <td> The `width` is not specified in the `format` string, but as an
+ * additional integer value argument preceding the argument that has to be
+ * formatted. </td>
+ *  </tr>
  * </table>
  * <table>
  *  <tr>
@@ -691,10 +697,16 @@ void	ft_putnbr_fd(
  * than this number, the result is padded with leading zeros. The value is not
  * truncated even if the result is longer. A `precision` of 0 means that no
  * character is written for the value 0.<br>
-For `s`: this is the maximum number of characters to be printed. By default all
-characters are printed until the ending null character is encountered.<br>
-If the period is specified without an explicit value for `precision`, 0 is
-assumed. </td>
+ * For `s`: this is the maximum number of characters to be printed. By default all
+ * characters are printed until the ending null character is encountered.<br>
+ * If the period is specified without an explicit value for `precision`, 0 is
+ * assumed. </td>
+ *  </tr>
+ *  <tr>
+ *   <td> .* </td>
+ *   <td> The `precision` is not specified in the `format` string, but as an
+ * additional integer value argument preceding the argument that has to be
+ * formatted. </td>
  *  </tr>
  * </table>
  * The `length` sub-specifier modifies the length of the data type. This is a
