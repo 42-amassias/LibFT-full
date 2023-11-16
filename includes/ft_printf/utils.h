@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 18:25:59 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/16 22:17:02 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,28 @@ struct s_format {
 	char	specifier;
 };
 
+/**
+ * @struct s_number_base
+ * @brief This structure represents a base.
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-16
+ */
+struct s_number_base {
+	/**
+	 * @brief The digits of this base.<br>
+	 * Must be a C-String.
+	 */
+	const char	*base;
+
+	/**
+	 * @brief If a formatter needs to prefix a number in this base, this will be
+	 * the used prefix.<br>
+	 * Must be a C-String.
+	 * @see ft_fprintf.
+	 */
+	const char	*prefix;
+};
+
 /* ************************************************************************** */
 /*                                                                            */
 /* Types                                                                      */
@@ -147,7 +169,13 @@ struct s_format {
  * @typedef t_format
  * @see s_format
  */
-typedef struct s_format	t_format;
+typedef struct s_format			t_format;
+
+/**
+ * @typedef t_number_base
+ * @see s_number_base
+ */
+typedef struct s_number_base	t_number_base;
 
 /* ************************************************************************** */
 /*                                                                            */
