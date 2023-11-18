@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/18 16:18:50 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/18 16:23:05 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,54 +16,54 @@ INC_DIR			:=	includes
 FLAG__INCLUDES	:=							\
 	-I$(INC_DIR)/libft
 FILES_SROUCES	:=							\
-	libft/ft_abs.c							\
-	libft/ft_atoi.c							\
-	libft/ft_bzero.c						\
-	libft/ft_calloc.c						\
-	libft/ft_isalnum.c						\
-	libft/ft_isalpha.c						\
-	libft/ft_isascii.c						\
-	libft/ft_isdigit.c						\
-	libft/ft_isprint.c						\
-	libft/ft_itoa.c							\
-	libft/ft_lstadd_back.c					\
-	libft/ft_lstadd_front.c					\
-	libft/ft_lstclear.c						\
-	libft/ft_lstdelone.c					\
-	libft/ft_lstiter.c						\
-	libft/ft_lstlast.c						\
-	libft/ft_lstmap.c						\
-	libft/ft_lstnew.c						\
-	libft/ft_lstsize.c						\
-	libft/ft_max.c							\
-	libft/ft_memchr.c						\
-	libft/ft_memcmp.c						\
-	libft/ft_memcpy.c						\
-	libft/ft_memmove.c						\
-	libft/ft_memset.c						\
-	libft/ft_memswap.c						\
-	libft/ft_min.c							\
-	libft/ft_putchar_fd.c					\
-	libft/ft_putendl_fd.c					\
-	libft/ft_putnbr_fd.c					\
-	libft/ft_putstr_fd.c					\
-	libft/ft_qsort.c						\
-	libft/ft_split.c						\
-	libft/ft_strchr.c						\
-	libft/ft_strdup.c						\
-	libft/ft_striteri.c						\
-	libft/ft_strjoin.c						\
-	libft/ft_strlcat.c						\
-	libft/ft_strlcpy.c						\
-	libft/ft_strlen.c						\
-	libft/ft_strmapi.c						\
-	libft/ft_strncmp.c						\
-	libft/ft_strnstr.c						\
-	libft/ft_strrchr.c						\
-	libft/ft_strtrim.c						\
-	libft/ft_substr.c						\
-	libft/ft_tolower.c						\
-	libft/ft_toupper.c						\
+	libft/ft_abs							\
+	libft/ft_atoi							\
+	libft/ft_bzero							\
+	libft/ft_calloc							\
+	libft/ft_isalnum						\
+	libft/ft_isalpha						\
+	libft/ft_isascii						\
+	libft/ft_isdigit						\
+	libft/ft_isprint						\
+	libft/ft_itoa							\
+	libft/ft_lstadd_back					\
+	libft/ft_lstadd_front					\
+	libft/ft_lstclear						\
+	libft/ft_lstdelone						\
+	libft/ft_lstiter						\
+	libft/ft_lstlast						\
+	libft/ft_lstmap							\
+	libft/ft_lstnew							\
+	libft/ft_lstsize						\
+	libft/ft_max							\
+	libft/ft_memchr							\
+	libft/ft_memcmp							\
+	libft/ft_memcpy							\
+	libft/ft_memmove						\
+	libft/ft_memset							\
+	libft/ft_memswap						\
+	libft/ft_min							\
+	libft/ft_putchar_fd						\
+	libft/ft_putendl_fd						\
+	libft/ft_putnbr_fd						\
+	libft/ft_putstr_fd						\
+	libft/ft_qsort							\
+	libft/ft_split							\
+	libft/ft_strchr							\
+	libft/ft_strdup							\
+	libft/ft_striteri						\
+	libft/ft_strjoin						\
+	libft/ft_strlcat						\
+	libft/ft_strlcpy						\
+	libft/ft_strlen							\
+	libft/ft_strmapi						\
+	libft/ft_strncmp						\
+	libft/ft_strnstr						\
+	libft/ft_strrchr						\
+	libft/ft_strtrim						\
+	libft/ft_substr							\
+	libft/ft_tolower						\
+	libft/ft_toupper						\
 
 DEFINES			:=	
 
