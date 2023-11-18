@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 15:57:11 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/18 15:57:25 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:24:25 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_maxmin(
-		int a,
-		int b)
+long long	ft_maxmin(
+				long long a,
+				long long b)
 {
 	if (a > b)
 		return (a);

@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 07:48:43 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:11:15 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:53:10 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,4 @@ void	putnchar_fd(
 {
 	while (count--)
 		ft_putchar_fd(c, fd);
-}
-
-int	max(
-		int a,
-		int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-int	min(
-		int a,
-		int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
 }

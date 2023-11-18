@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/18 15:10:55 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:51:29 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,30 +208,6 @@ void	putnchar_fd(
 			int fd,
 			char c,
 			int count);
-
-/**
- * @brief Returns the greatest of `a` and `b`.
- * @param a An integer.
- * @param b An integer.
- * @return The greatest of `a` and `b`.
- * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- */
-int		max(
-			int a,
-			int b);
-
-/**
- * @brief Returns the lowest of `a` and `b`.
- * @param a An integer.
- * @param b An integer.
- * @return The lowest of `a` and `b`.
- * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- */
-int		min(
-			int a,
-			int b);
 
 /**
  * @brief Acts exactly as `ft_fprintf` except the argument list is passed as a

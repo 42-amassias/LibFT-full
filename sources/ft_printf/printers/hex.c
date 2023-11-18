@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 06:36:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 18:25:59 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:25:21 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,8 +126,8 @@ int	hex_printer_fd(
 		&& !fmt__left_justify(fmt)
 		&& !fmt__use_precision(fmt))
 		fmt->precision = fmt->width - number_size;
-	fmt->precision = max(0, fmt->precision);
-	fmt->width = max(0, fmt->width - number_size - fmt->precision);
+	fmt->precision = ft_max(0, fmt->precision);
+	fmt->width = ft_max(0, fmt->width - number_size - fmt->precision);
 	_print_fd(fd, fmt, n, fmt->specifier == 'X');
 	return (prefix + number_size + fmt->width + fmt->precision);
 }

@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:15:03 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/13 17:12:54 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:25:00 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int	string_printer_fd(
 
 	slen = ft_strlen(str);
 	if (fmt__use_precision(fmt))
-		slen = min(fmt->precision, slen);
-	fmt->width = max(0, fmt->width - slen);
+		slen = ft_min(fmt->precision, slen);
+	fmt->width = ft_max(0, fmt->width - slen);
 	len = slen + fmt->width;
 	if (fmt__left_justify(fmt))
 		_putnstr_fd(fd, str, slen);
