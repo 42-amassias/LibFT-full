@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/16 22:08:28 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:35:57 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ struct
 	 * @brief The content of this node.
 	 */
 	void			*content;
-
 	/**
 	 * @brief A pointer to the next node of the list.
 	 */
@@ -95,8 +94,8 @@ typedef int				(*t_comparator)(void *, void *);
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_isalpha(
-			int c);
+int			ft_isalpha(
+				int c);
 
 /**
  * @brief Tells whether or not `c` is a digit.
@@ -105,8 +104,8 @@ int		ft_isalpha(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_isdigit(
-			int c);
+int			ft_isdigit(
+				int c);
 
 /**
  * @brief Tells whether or not `c` is a letter or a digit.
@@ -115,8 +114,8 @@ int		ft_isdigit(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_isalnum(
-			int c);
+int			ft_isalnum(
+				int c);
 
 /**
  * @brief Tells whether or not `c` is an ascii character.
@@ -125,8 +124,8 @@ int		ft_isalnum(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_isascii(
-			int c);
+int			ft_isascii(
+				int c);
 
 /**
  * @brief Tells whether or not `c` is printable.
@@ -135,8 +134,8 @@ int		ft_isascii(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_isprint(
-			int c);
+int			ft_isprint(
+				int c);
 
 /**
  * @brief If `c` is a letter, converts it to uppercase.
@@ -145,8 +144,8 @@ int		ft_isprint(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_toupper(
-			int c);
+int			ft_toupper(
+				int c);
 
 /**
  * @brief If `c` is a letter, converts it to lowercase.
@@ -155,8 +154,8 @@ int		ft_toupper(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_tolower(
-			int c);
+int			ft_tolower(
+				int c);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -171,8 +170,8 @@ int		ft_tolower(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-size_t	ft_strlen(
-			const char *str);
+size_t		ft_strlen(
+				const char *str);
 
 /**
  * @brief Sets `n` bytes of `ptr` to `c`.
@@ -183,10 +182,10 @@ size_t	ft_strlen(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	*ft_memset(
-			void *ptr,
-			int c,
-			size_t n);
+void		*ft_memset(
+				void *ptr,
+				int c,
+				size_t n);
 
 /**
  * @brief Writes `n` zeros ('\0') to `ptr`.
@@ -195,9 +194,9 @@ void	*ft_memset(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_bzero(
-			void *ptr,
-			size_t n);
+void		ft_bzero(
+				void *ptr,
+				size_t n);
 
 /*!
  * @brief Copies `n` bytes of `src` to `dst`. The memory areas mus not overlap.
@@ -209,10 +208,10 @@ void	ft_bzero(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	*ft_memcpy(
-			void *dst,
-			const void *src,
-			size_t n);
+void		*ft_memcpy(
+				void *dst,
+				const void *src,
+				size_t n);
 
 /**
  * @brief copies `n` bytes from memory area `src` to memory area `dst`.
@@ -226,10 +225,10 @@ void	*ft_memcpy(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	*ft_memmove(
-			void *dst,
-			const void *src,
-			size_t n);
+void		*ft_memmove(
+				void *dst,
+				const void *src,
+				size_t n);
 
 /**
  * @brief Copies `src` to `dst`. Takes the full `size` of `dst` and guarantee
@@ -244,10 +243,10 @@ void	*ft_memmove(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-size_t	ft_strlcpy(
-			char *dst,
-			const char *src,
-			size_t size);
+size_t		ft_strlcpy(
+				char *dst,
+				const char *src,
+				size_t size);
 
 /**
  * @brief Concatenate `str` to `dst`. Takes the full `size` of `dst`
@@ -264,10 +263,10 @@ size_t	ft_strlcpy(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-size_t	ft_strlcat(
-			char *dst,
-			const char *src,
-			size_t size);
+size_t		ft_strlcat(
+				char *dst,
+				const char *src,
+				size_t size);
 
 /**
  * @brief Returns a pointer to the first occurence of `c` in `str` if it exists,
@@ -279,9 +278,9 @@ size_t	ft_strlcat(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_strchr(
-			const char *str,
-			int c);
+char		*ft_strchr(
+				const char *str,
+				int c);
 
 /**
  * @brief Returns a pointer to the last occurence of `c` in `str` if it exists,
@@ -293,9 +292,9 @@ char	*ft_strchr(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_strrchr(
-			const char *str,
-			int c);
+char		*ft_strrchr(
+				const char *str,
+				int c);
 
 /**
  * @brief Compares with the lexical order the `n` first characters of `str_1`
@@ -307,10 +306,10 @@ char	*ft_strrchr(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_strncmp(
-			const char *str_1,
-			const char *str_2,
-			size_t n);
+int			ft_strncmp(
+				const char *str_1,
+				const char *str_2,
+				size_t n);
 
 /**
  * @brief Returns a pointer to the first occurence of the byte `c` in `ptr` if
@@ -322,10 +321,10 @@ int		ft_strncmp(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	*ft_memchr(
-			const void *ptr,
-			int c,
-			size_t n);
+void		*ft_memchr(
+				const void *ptr,
+				int c,
+				size_t n);
 
 /**
  * @brief Compares with the lexical order the `n` first bytes of `ptr_1`
@@ -337,10 +336,10 @@ void	*ft_memchr(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_memcmp(
-			const void *s1,
-			const void *s2,
-			size_t n);
+int			ft_memcmp(
+				const void *s1,
+				const void *s2,
+				size_t n);
 
 /**
  * @brief Swaps `n` bytes of `a` and `b`. The memory areas must not overlap.
@@ -350,10 +349,10 @@ int		ft_memcmp(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_memswap(
-			void *a,
-			void *b,
-			size_t n);
+void		ft_memswap(
+				void *a,
+				void *b,
+				size_t n);
 
 /**
  * @brief Locates the first occurrence of the null-terminated string `little`
@@ -368,10 +367,10 @@ void	ft_memswap(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_strnstr(
-			const char *big,
-			const char *little,
-			size_t len);
+char		*ft_strnstr(
+				const char *big,
+				const char *little,
+				size_t len);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a copy of `str`.
@@ -380,8 +379,8 @@ char	*ft_strnstr(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_strdup(
-			const char *str);
+char		*ft_strdup(
+				const char *str);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a substring from the
@@ -394,10 +393,10 @@ char	*ft_strdup(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_substr(
-			char const *str,
-			unsigned int start,
-			size_t len);
+char		*ft_substr(
+				char const *str,
+				unsigned int start,
+				size_t len);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a new string, which is the
@@ -408,9 +407,9 @@ char	*ft_substr(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_strjoin(
-			char const *str_1,
-			char const *str_2);
+char		*ft_strjoin(
+				char const *str_1,
+				char const *str_2);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a copy of `str` with the
@@ -423,9 +422,9 @@ char	*ft_strjoin(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_strtrim(
-			char const *str,
-			char const *set);
+char		*ft_strtrim(
+				char const *str,
+				char const *set);
 
 /**
  * @brief Allocates (with malloc(3)) and returns an array of strings obtained by
@@ -438,9 +437,9 @@ char	*ft_strtrim(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	**ft_split(
-			char const *str,
-			char delim_char);
+char		**ft_split(
+				char const *str,
+				char delim_char);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a string representing the
@@ -451,8 +450,8 @@ char	**ft_split(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_itoa(
-			int n);
+char		*ft_itoa(
+				int n);
 
 /**
  * @brief Applies the function `f` to each character of the string `str`, and
@@ -465,9 +464,9 @@ char	*ft_itoa(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-char	*ft_strmapi(
-			char const *s,
-			char (*f)(unsigned int, char));
+char		*ft_strmapi(
+				char const *s,
+				char (*f)(unsigned int, char));
 
 /**
  * @brief Applies the function `f` on each character of the string `str`,
@@ -478,9 +477,9 @@ char	*ft_strmapi(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_striteri(
-			char *str,
-			void (*f)(unsigned int, char*));
+void		ft_striteri(
+				char *str,
+				void (*f)(unsigned int, char*));
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -496,8 +495,8 @@ void	ft_striteri(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_atoi(
-			const char *str);
+int			ft_atoi(
+				const char *str);
 
 /**
  * @brief Allocates memory for an array of `nmemb` elements of size bytes each
@@ -512,9 +511,41 @@ int		ft_atoi(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	*ft_calloc(
-			size_t nmemb,
-			size_t size);
+void		*ft_calloc(
+				size_t nmemb,
+				size_t size);
+
+/**
+ * @brief Returns the greatest of `a` and `b`.
+ * @param a An integer.
+ * @param b An integer.
+ * @return The greatest of `a` and `b`.
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-06
+ */
+long long	ft_max(
+				long long a,
+				long long b);
+
+/**
+ * @brief Returns the lowest of `a` and `b`.
+ * @param a An integer.
+ * @param b An integer.
+ * @return The lowest of `a` and `b`.
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-06
+ */
+long long	ft_min(
+				long long a,
+				long long b);
+
+/**
+ * @brief Returns the absolute value of the integer `x`.
+ * @param x An integer.
+ * @return int 
+ */
+long long	ft_abs(
+				long long x);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -529,9 +560,9 @@ void	*ft_calloc(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_putchar_fd(
-			char c,
-			int fd);
+void		ft_putchar_fd(
+				char c,
+				int fd);
 
 /**
  * @brief Outputs the string `str` to the given file descriptor.
@@ -540,9 +571,9 @@ void	ft_putchar_fd(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_putstr_fd(
-			char *str,
-			int fd);
+void		ft_putstr_fd(
+				char *str,
+				int fd);
 
 /**
  * @brief Outputs the string `str` to the given file descriptor followed by a
@@ -552,9 +583,9 @@ void	ft_putstr_fd(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_putendl_fd(
-			char *str,
-			int fd);
+void		ft_putendl_fd(
+				char *str,
+				int fd);
 
 /**
  * @brief Outputs the signed integer `n` to the given file descriptor.
@@ -563,9 +594,9 @@ void	ft_putendl_fd(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_putnbr_fd(
-			signed int n,
-			int fd);
+void		ft_putnbr_fd(
+				signed int n,
+				int fd);
 
 # ifdef USE_LIB__FT_PRINTF
 
@@ -697,10 +728,10 @@ void	ft_putnbr_fd(
  * than this number, the result is padded with leading zeros. The value is not
  * truncated even if the result is longer. A `precision` of 0 means that no
  * character is written for the value 0.<br>
- * For `s`: this is the maximum number of characters to be printed. By default all
- * characters are printed until the ending null character is encountered.<br>
- * If the period is specified without an explicit value for `precision`, 0 is
- * assumed. </td>
+ * For `s`: this is the maximum number of characters to be printed. By default
+ * all characters are printed until the ending null character is encountered.
+ * <br> If the period is specified without an explicit value for `precision`, 0
+ * is assumed. </td>
  *  </tr>
  *  <tr>
  *   <td> .* </td>
@@ -748,18 +779,18 @@ void	ft_putnbr_fd(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-11
  */
-int		ft_fprintf(
-			int fd,
-			const char *fmt,
-			...);
+int			ft_fprintf(
+				int fd,
+				const char *fmt,
+				...);
 
 /**
  * @copydoc ft_fprintf
  * @note The file descriptor is set to stdout.
  */
-int		ft_printf(
-			const char *fmt,
-			...);
+int			ft_printf(
+				const char *fmt,
+				...);
 
 # endif
 
@@ -773,8 +804,8 @@ int		ft_printf(
  * @date 2023-11-06
  * @todo Make documentation.
  */
-char	*get_next_line(
-			int fd);
+char		*get_next_line(
+				int fd);
 
 # endif
 
@@ -793,8 +824,8 @@ char	*get_next_line(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-t_list	*ft_lstnew(
-			void *content);
+t_list		*ft_lstnew(
+				void *content);
 
 /**
  * @brief Adds the node `new` at the beginning of `list`.
@@ -803,9 +834,9 @@ t_list	*ft_lstnew(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_lstadd_front(
-			t_list **lst,
-			t_list *new);
+void		ft_lstadd_front(
+				t_list **lst,
+				t_list *new);
 
 /**
  * @brief Counts the number of nodes in a list.
@@ -814,8 +845,8 @@ void	ft_lstadd_front(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-int		ft_lstsize(
-			t_list *list);
+int			ft_lstsize(
+				t_list *list);
 
 /**
  * @brief Returns the last node of the list.
@@ -824,8 +855,8 @@ int		ft_lstsize(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-t_list	*ft_lstlast(
-			t_list *list);
+t_list		*ft_lstlast(
+				t_list *list);
 
 /**
  * @brief Adds the node `new` at the end of the list.
@@ -834,9 +865,9 @@ t_list	*ft_lstlast(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_lstadd_back(
-			t_list **list,
-			t_list *new);
+void		ft_lstadd_back(
+				t_list **list,
+				t_list *new);
 
 /**
  * @brief Takes as a parameter a node and frees the memory of the node’s content
@@ -847,9 +878,9 @@ void	ft_lstadd_back(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_lstdelone(
-			t_list *list,
-			void (*del_fun)(void *));
+void		ft_lstdelone(
+				t_list *list,
+				void (*del_fun)(void *));
 
 /**
  * @brief Deletes and frees the given node and every successor of that node,
@@ -861,9 +892,9 @@ void	ft_lstdelone(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_lstclear(
-			t_list **list,
-			void (*del_fun)(void *));
+void		ft_lstclear(
+				t_list **list,
+				void (*del_fun)(void *));
 
 /**
  * @brief Iterates the list `list` and applies the function `f` on the content
@@ -873,9 +904,9 @@ void	ft_lstclear(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_lstiter(
-			t_list *list,
-			void (*f)(void *));
+void		ft_lstiter(
+				t_list *list,
+				void (*f)(void *));
 
 /**
  * @brief Iterates the list `list` and applies the function `f` on the content of
@@ -890,10 +921,10 @@ void	ft_lstiter(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-t_list	*ft_lstmap(
-			t_list *list,
-			void *(*f)(void *),
-			void (*del_fun)(void *));
+t_list		*ft_lstmap(
+				t_list *list,
+				void *(*f)(void *),
+				void (*del_fun)(void *));
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -911,10 +942,10 @@ t_list	*ft_lstmap(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
-void	ft_qsort(
-			void *base,
-			size_t nmemb,
-			size_t size,
-			t_comparator cmp);
+void		ft_qsort(
+				void *base,
+				size_t nmemb,
+				size_t size,
+				t_comparator cmp);
 
 #endif
