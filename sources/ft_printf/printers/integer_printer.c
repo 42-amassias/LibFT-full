@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex.c                                              :+:      :+:    :+:   */
+/*   integer_printer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 06:36:08 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/18 16:25:21 by amassias         ###   ########.fr       */
+/*   Created: 2023/11/18 14:55:28 by amassias          #+#    #+#             */
+/*   Updated: 2023/11/19 19:50:49 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file hex.c
+ * @file integer_printer.c
  * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
+ * @date 2023-11-18
  * @copyright Copyright (c) 2023
  */
 
@@ -23,31 +23,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "utils.h"
-
-/* ************************************************************************** */
-/*                                                                            */
-/* Defines                                                                    */
-/*                                                                            */
-/* ************************************************************************** */
-
-/**
- * @brief All the uppercase digits of hexadecimal followed by the uppercase
- * hexadecimal prefix.
- * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- * @see ft_fprintf
- */
-#define U_CHARSET "0123456789ABCDEF0X"
-
-/**
- * @brief All the lowercase digits of hexadecimal followed by the lowercase
- * hexadecimal prefix.
- * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- * @see ft_fprintf
- */
-#define L_CHARSET "0123456789abcdef0x"
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -56,47 +33,47 @@
 /* ************************************************************************** */
 
 /**
- * @brief Computes the length in character of an hexadecimal number.
- * @param n A number.
- * @return The length of `n` in hexadecimal.
+ * @brief 
+ * @param base 
+ * @param n 
+ * @return int 
  * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
+ * @date 2023-11-18
+ * @todo Make documentation.
  */
 static int	_len(
-				size_t n);
+				t_number_base *base,
+				long long n);
 
 /**
- * @brief Puts an hexadecimal number `n` onto the file descriptor `fd` using the
- * charset `charset`.
- * @param charset The charset to use to print the number.
- * @param n The number to print.
+ * @brief 
+ * @param fd 
+ * @param base 
+ * @param n 
  * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
+ * @date 2023-11-18
+ * @todo Make documentation.
  */
-static void	_print_hex_fd(
+static void	_print_integer_fd(
 				int fd,
-				const char *charset,
-				size_t n);
+				t_number_base *base,
+				unsigned long long n);
 
 /**
- * @brief Using the specified format `fmt`, puts a formatted hexadecimal number
- * `n` to the file descriptor `fd`.
- * @param fd The file descriptor on which to put the formatted hexadecimal
- * number `n`.
- * @param fmt The format to use.
- * @param n The hexadecimal number to format.
- * @param u Flag to indicate if the hexadecimal letters should be uppercase or
- * lowercase.
- * @return The number of characters put onto the file decriptor `fd`.
+ * @brief 
+ * @param fd 
+ * @param fmt 
+ * @param base 
+ * @param n 
  * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- * @see ft_fprintf
+ * @date 2023-11-18
+ * @todo Make documentation.
  */
 static void	_print_fd(
 				int fd,
 				t_format *fmt,
-				size_t n,
-				int u);
+				t_number_base *base,
+				long long n);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -104,32 +81,36 @@ static void	_print_fd(
 /*                                                                            */
 /* ************************************************************************** */
 
-int	hex_printer_fd(
+int	integer_printer_fd(
 		int fd,
 		t_format *fmt,
-		size_t n)
+		t_number_base *base,
+		long long n)
 {
 	int	number_size;
-	int	prefix;
+	int	prefix_size;
 
+	number_size = _len(base, n);
 	if (fmt__use_precision(fmt) && fmt->precision == 0 && n == 0)
 		number_size = 0;
-	else
-		number_size = _len(n);
-	fmt->precision -= number_size;
+	fmt->precision -= _len(base, n);
+	if (base->has_sign
+		&& (n < 0 || fmt__align_sign(fmt) || fmt__force_sign(fmt)))
+		++number_size;
 	if (n == 0)
 		fmt->flags &= ~FMT_FLAG__PREFIX;
-	prefix = 2 * fmt__prefix(fmt);
-	if (prefix)
-		fmt->width -= 2;
+	prefix_size = 0;
+	if (fmt__prefix(fmt))
+		prefix_size = base->prefix.size;
+	fmt->width -= prefix_size;
 	if (fmt__zero_padding(fmt)
 		&& !fmt__left_justify(fmt)
 		&& !fmt__use_precision(fmt))
 		fmt->precision = fmt->width - number_size;
-	fmt->precision = ft_max(0, fmt->precision);
-	fmt->width = ft_max(0, fmt->width - number_size - fmt->precision);
-	_print_fd(fd, fmt, n, fmt->specifier == 'X');
-	return (prefix + number_size + fmt->width + fmt->precision);
+	fmt->width = ft_max(0,
+			fmt->width - number_size - ft_max(0, fmt->precision));
+	_print_fd(fd, fmt, base, n);
+	return (prefix_size + number_size + fmt->width + ft_max(0, fmt->precision));
 }
 
 /* ************************************************************************** */
@@ -139,48 +120,59 @@ int	hex_printer_fd(
 /* ************************************************************************** */
 
 static int	_len(
-				size_t n)
+				t_number_base *base,
+				long long _n)
 {
-	int	len;
+	unsigned long long	n;
+	int					len;
 
 	len = 1;
-	while (n > 0xf)
+	if (_n < 0 && base->has_sign)
+		_n = ~_n + 1;
+	n = _n;
+	while (n >= base->base.size)
 	{
 		++len;
-		n >>= 4;
+		n /= base->base.size;
 	}
 	return (len);
 }
 
-static void	_print_hex_fd(
+static void	_print_integer_fd(
 				int fd,
-				const char *charset,
-				size_t n)
+				t_number_base *base,
+				unsigned long long n)
 {
-	if (n > 0xf)
-		_print_hex_fd(fd, charset, n >> 4);
-	ft_putchar_fd(charset[n & 0xf], fd);
+	if (n >= base->base.size)
+		_print_integer_fd(fd, base, n / base->base.size);
+	ft_putchar_fd(base->base.str[n % base->base.size], fd);
 }
 
 static void	_print_fd(
 				int fd,
 				t_format *fmt,
-				size_t n,
-				int u)
+				t_number_base *base,
+				long long n)
 {
-	char	*charset;
-
-	charset = L_CHARSET;
-	if (u)
-		charset = U_CHARSET;
 	if (!fmt__left_justify(fmt))
 		putnchar_fd(fd, ' ', fmt->width);
+	if (n < 0 && base->has_sign)
+		write(fd, "-", 1);
+	else if (fmt__force_sign(fmt) && base->has_sign)
+		write(fd, "+", 1);
+	else if (fmt__align_sign(fmt) && base->has_sign)
+		write(fd, " ", 1);
 	if (fmt__prefix(fmt)
-		&& (!fmt__use_precision(fmt) || fmt->precision >= 0 || n))
-		ft_putstr_fd(&charset[sizeof(L_CHARSET) - 3], 1);
-	putnchar_fd(fd, '0', fmt->precision);
-	if (!fmt__use_precision(fmt) || fmt->precision != 0 || n != 0)
-		_print_hex_fd(fd, charset, n);
+		&& (!fmt__use_precision(fmt) || fmt->precision >= 0 || n != 0))
+		ft_putstr_fd(base->prefix.str, fd);
+	if (fmt->precision > 0)
+		putnchar_fd(fd, '0', fmt->precision);
+	if (!fmt__use_precision(fmt) || fmt->precision >= 0 || n != 0)
+	{
+		if (n < 0 && base->has_sign)
+			n = ~n + 1;
+		_print_integer_fd(fd, base, (unsigned long long) n);
+	}
 	if (fmt__left_justify(fmt))
 		putnchar_fd(fd, ' ', fmt->width);
 }

@@ -6,12 +6,28 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/18 16:23:05 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/19 20:01:08 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# ############################################################################ #
+#                                                                              #
+# Global variables                                                             #
+#                                                                              #
+# ############################################################################ #
+
 SRC_DIR			:=	sources
 INC_DIR			:=	includes
+
+TARGET			:=	libftfull.a
+
+CC				:=	cc
+
+# ############################################################################ #
+#                                                                              #
+# Libft sources                                                                #
+#                                                                              #
+# ############################################################################ #
 
 FLAG__INCLUDES	:=							\
 	-I$(INC_DIR)/libft
@@ -63,52 +79,50 @@ FILES_SROUCES	:=							\
 	libft/ft_strtrim						\
 	libft/ft_substr							\
 	libft/ft_tolower						\
-	libft/ft_toupper						\
+	libft/ft_toupper
 
-DEFINES			:=	
+# ############################################################################ #
+#                                                                              #
+# Printf sources                                                               #
+#                                                                              #
+# ############################################################################ #
 
-ifdef USE_FTPRINTF
 FLAG__INCLUDES	:=	$(FLAG__INCLUDES)		\
 	-I$(INC_DIR)/ft_printf
 FILES_SROUCES	:=	$(FILES_SROUCES)		\
-	ft_printf/ft_printf						\
-	ft_printf/ft_vprintf					\
-	ft_printf/utils							\
 	ft_printf/flags/align_sign				\
 	ft_printf/flags/force_sign				\
-	ft_printf/flags/prefix					\
 	ft_printf/flags/left_justify			\
 	ft_printf/flags/precision				\
+	ft_printf/flags/prefix					\
 	ft_printf/flags/zero_padding			\
-	ft_printf/printers/number				\
-	ft_printf/printers/hex					\
-	ft_printf/printers/string				\
+	ft_printf/ft_printf						\
+	ft_printf/ft_vprintf					\
+	ft_printf/printers/integer_printer		\
+	ft_printf/printers/string_printer		\
 	ft_printf/specifiers/char				\
-	ft_printf/specifiers/string				\
-	ft_printf/specifiers/pointer			\
 	ft_printf/specifiers/decimal			\
-	ft_printf/specifiers/integer			\
-	ft_printf/specifiers/unsigned			\
 	ft_printf/specifiers/hex_lo				\
-	ft_printf/specifiers/hex_up
-DEFINES			:=	$(DEFINES)				\
-	-DUSE_LIB__FT_PRINTF
-endif
+	ft_printf/specifiers/hex_up				\
+	ft_printf/specifiers/integer			\
+	ft_printf/specifiers/pointer			\
+	ft_printf/specifiers/string				\
+	ft_printf/specifiers/unsigned			\
+	ft_printf/utils
 
-ifdef USE_GNL
-FLAG__INCLUDES	:=	$(FLAG__INCLUDES)		\
-
-FILES_SROUCES	:=	$(FILES_SROUCES)		\
-
-DEFINES			:=	$(DEFINES)				\
-	-DUSE_LIB__GET_NEXT_LINE
-endif
+# ############################################################################ #
+#                                                                              #
+# Object generation                                                            #
+#                                                                              #
+# ############################################################################ #
 
 OBJS	=	$(addprefix $(SRC_DIR)/,$(addsuffix .o,$(FILES_SROUCES)))
 
-TARGET	:=	libftfull.a
-
-CC		:=	cc
+# ############################################################################ #
+#                                                                              #
+# Phony rules                                                                  #
+#                                                                              #
+# ############################################################################ #
 
 .PHONY: all clean fclean re
 
@@ -121,6 +135,12 @@ fclean: clean
 	rm -f $(TARGET)
 
 re: fclean all
+
+# ############################################################################ #
+#                                                                              #
+# Binary / Library generation                                                  #
+#                                                                              #
+# ############################################################################ #
 
 $(TARGET): $(OBJS)
 	ar -rcs $@ $^

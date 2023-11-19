@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/18 15:35:57 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/19 20:01:29 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -572,7 +572,7 @@ void		ft_putchar_fd(
  * @date 2023-11-06
  */
 void		ft_putstr_fd(
-				char *str,
+				const char *str,
 				int fd);
 
 /**
@@ -584,7 +584,7 @@ void		ft_putstr_fd(
  * @date 2023-11-06
  */
 void		ft_putendl_fd(
-				char *str,
+				const char *str,
 				int fd);
 
 /**
@@ -597,8 +597,6 @@ void		ft_putendl_fd(
 void		ft_putnbr_fd(
 				signed int n,
 				int fd);
-
-# ifdef USE_LIB__FT_PRINTF
 
 /**
  * @brief Writes a formated string to the file
@@ -791,23 +789,6 @@ int			ft_fprintf(
 int			ft_printf(
 				const char *fmt,
 				...);
-
-# endif
-
-# ifdef USE_LIB__GET_NEXT_LINE
-
-/**
- * @brief 
- * @param fd 
- * @return char* 
- * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- * @todo Make documentation.
- */
-char		*get_next_line(
-				int fd);
-
-# endif
 
 /* ************************************************************************** */
 /*                                                                            */

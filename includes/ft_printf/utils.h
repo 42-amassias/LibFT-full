@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/18 15:51:29 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:05:38 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,20 +116,17 @@ struct s_format {
 	 * @see ft_fprintf
 	 */
 	int		width;
-
 	/**
 	 * @brief The `.precision` field.
 	 * @see ft_fprintf
 	 */
 	int		precision;
-
 	/**
 	 * @brief A bitflag that represents what flags have been set and if the
 	 * `.precision` field has been set.
 	 * @see ft_fprintf
 	 */
 	char	flags;
-
 	/**
 	 * @brief The `specifier` field.
 	 * @see ft_fprtinf
@@ -146,29 +143,25 @@ struct s_format {
 struct s_number_base {
 	struct s_base {
 		/**
-		 * @brief The number of digits of the base.
+		 * @brief The number of digits in this base.
 		 */
-		int			size;
-
+		int				size;
 		/**
 		 * @brief The digits of this base.
 		 */
-		const char	*str;
+		const char		*str;
 	}	base;
-
 	struct s_prefix {
 		/**
-		 * @brief The size of the prefix in characters.
+		 * @brief The numbers of characters in the prefix.
 		 */
 		int			size;
-
 		/**
-		 * @brief If a formatter needs to prefix a number in this base, this
-		 * will be the prefix used.
-		 * @see ft_fprintf.
+		 * @brief The prefix.
 		 */
 		const char	*str;
-	}	prefix
+	}	prefix;
+	int	has_sign;
 };
 
 /* ************************************************************************** */
@@ -298,23 +291,6 @@ int		fmt__use_precision(
 /* ************************************************************************** */
 
 /**
- * @brief Using the specified format `fmt`, puts a formatted hexadecimal number
- * `n` to the file descriptor `fd`.
- * @param fd The file descriptor on which to put the formatted hexadecimal
- * number `n`.
- * @param fmt The format to use.
- * @param n The hexadecimal number to format.
- * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
- * @see ft_fprintf
- */
-int		hex_printer_fd(
-			int fd,
-			t_format *fmt,
-			size_t n);
-
-/**
  * @brief Using the specified format, puts a formatted string `str` to the file
  * descriptor `fd`.
  * @param fd The file descriptor on which to put the formatted string.
@@ -324,6 +300,7 @@ int		hex_printer_fd(
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
+ * @see s_format
  */
 int		string_printer_fd(
 			int fd,
@@ -331,20 +308,24 @@ int		string_printer_fd(
 			char *str);
 
 /**
- * @brief Using the specified format, puts a formatted decimal number `n` to the
- * file descriptor `fd`.
- * @param fd The file descriptor on which to put the formatted decimal number.
+ * @brief Using the specified format `fmt` and base `base`, puts a formatted
+ * integer `n` to the file descriptor `fd`.
+ * @param fd The file descriptor on which to put the formatted integer.
  * @param fmt The format to use.
+ * @param base The base to use.
  * @param n The decimal number to format.
  * @return The number of characters put onto the file decriptor `fd`.
  * @author amassias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
+ * @see s_format
+ * @see s_number_base
  */
-int		number_printer_fd(
+int		integer_printer_fd(
 			int fd,
 			t_format *fmt,
-			long n);
+			t_number_base *base,
+			long long n);
 
 /* ************************************************************************** */
 /*                                                                            */

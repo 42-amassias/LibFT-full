@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 22:02:33 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/06 11:27:30 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 17:14:24 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 /* ************************************************************************** */
 
 void	ft_putstr_fd(
-			char *str,
+			const char *str,
 			int fd)
 {
 	write(fd, str, ft_strlen(str));

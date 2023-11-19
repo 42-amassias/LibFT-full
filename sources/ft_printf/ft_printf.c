@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:35:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/11 19:48:26 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/18 17:34:14 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int	ft_printf(
 	va_list	args;
 
 	va_start(args, fmt);
-	ft_vprintf(0, fmt, &args);
+	ft_vprintf(STDOUT_FILENO, fmt, &args);
 	va_end(args);
 }
