@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:35:23 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/18 17:34:14 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/20 01:29:37 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ int	ft_fprintf(
 		...)
 {
 	va_list	args;
+	int		len;
 
 	va_start(args, fmt);
-	ft_vprintf(fd, fmt, &args);
+	len = ft_vprintf(fd, fmt, &args);
 	va_end(args);
+	return (len);
 }
 
 int	ft_printf(
@@ -51,8 +53,10 @@ int	ft_printf(
 		...)
 {
 	va_list	args;
+	int		len;
 
 	va_start(args, fmt);
-	ft_vprintf(STDOUT_FILENO, fmt, &args);
+	len = ft_vprintf(STDOUT_FILENO, fmt, &args);
 	va_end(args);
+	return (len);
 }
