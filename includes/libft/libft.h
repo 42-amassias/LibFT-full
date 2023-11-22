@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/22 16:28:44 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:51:44 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -810,6 +810,16 @@ int			ft_fprintf(
 int			ft_printf(
 				const char *fmt,
 				...);
+
+/**
+ * @param fd 
+ * @return char* 
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-22
+ * @todo Make documentation.
+ */
+char		*get_next_line(
+				int fd);
 
 /* ************************************************************************** */
 /*                                                                            */

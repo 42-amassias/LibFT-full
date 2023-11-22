@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/22 16:28:37 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/22 19:50:34 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,6 +114,17 @@ FILES_SROUCES	:=	$(FILES_SROUCES)		\
 
 # ############################################################################ #
 #                                                                              #
+# Printf sources                                                               #
+#                                                                              #
+# ############################################################################ #
+
+FLAG__INCLUDES	:=	$(FLAG__INCLUDES)		\
+	-I$(INC_DIR)/get_next_line
+FILES_SROUCES	:=	$(FILES_SROUCES)		\
+	get_next_line/get_next_line
+
+# ############################################################################ #
+#                                                                              #
 # Object generation                                                            #
 #                                                                              #
 # ############################################################################ #
@@ -126,7 +137,7 @@ OBJS	=	$(addprefix $(SRC_DIR)/,$(addsuffix .o,$(FILES_SROUCES)))
 #                                                                              #
 # ############################################################################ #
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re norminette
 
 all: $(TARGET)
 
