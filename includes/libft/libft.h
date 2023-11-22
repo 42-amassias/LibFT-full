@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/19 20:01:29 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:22:07 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,16 @@ int			ft_isascii(
  */
 int			ft_isprint(
 				int c);
+
+/**
+ * @brief Tells whether or not `c` is a space.
+ * @param c A character.
+ * @return whether or not `c` is a space.
+ * @author amassias (amssias@student.42lehavre.fr)
+ * @date 2023-11-06
+ */
+int			ft_isspace(
+				char c);
 
 /**
  * @brief If `c` is a letter, converts it to uppercase.

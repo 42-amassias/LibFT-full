@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/19 20:01:08 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/22 16:24:43 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ FILES_SROUCES	:=							\
 	libft/ft_isascii						\
 	libft/ft_isdigit						\
 	libft/ft_isprint						\
+	libft/ft_isspace						\
 	libft/ft_itoa							\
 	libft/ft_lstadd_back					\
 	libft/ft_lstadd_front					\

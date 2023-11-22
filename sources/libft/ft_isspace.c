@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 15:29:11 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/22 16:23:10 by amassias         ###   ########.fr       */
+/*   Created: 2023/11/22 16:22:15 by amassias          #+#    #+#             */
+/*   Updated: 2023/11/22 16:22:44 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_atoi.c
+ * @file ft_isspace.c
  * @author amassias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
+ * @date 2023-11-22
  * @copyright Copyright (c) 2023
- * @note This function is part of the original libft.
+ * @note This function is not part of the original libft.
  */
 
 /* ************************************************************************** */
@@ -32,24 +32,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(
-	const char *str)
+int	ft_isspace(
+		char c)
 {
-	int		value;
-	int		sign;
-
-	value = 0;
-	sign = 1;
-	while (ft_isspace(*str))
-		++str;
-	if (*str == '-')
-	{
-		++str;
-		sign = -sign;
-	}
-	else if (*str == '+')
-		++str;
-	while (ft_isdigit(*str))
-		value = 10 * value + (*str++) - '0';
-	return (sign * value);
+	return (c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r' || c == ' ');
 }
