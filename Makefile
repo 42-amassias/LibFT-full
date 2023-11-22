@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/22 16:24:43 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/22 16:28:37 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ FLAG__INCLUDES	:=							\
 	-I$(INC_DIR)/libft
 FILES_SROUCES	:=							\
 	libft/ft_abs							\
+	libft/ft_atof							\
 	libft/ft_atoi							\
 	libft/ft_bzero							\
 	libft/ft_calloc							\

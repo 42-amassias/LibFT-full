@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/22 16:22:07 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:28:44 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -506,6 +506,17 @@ void		ft_striteri(
  * @date 2023-11-06
  */
 int			ft_atoi(
+				const char *str);
+
+/**
+ * @brief Converts the initial portion of the string pointed to by `str` to a
+ * double.
+ * @param str The string to be converted.
+ * @return The converted value.
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-22
+ */
+double		ft_atof(
 				const char *str);
 
 /**
