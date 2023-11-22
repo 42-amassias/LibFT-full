@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/22 19:51:44 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:32:25 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,6 +239,24 @@ void		*ft_memmove(
 				void *dst,
 				const void *src,
 				size_t n);
+
+/**
+ * @brief Copies `src` into `dst` until a null byte (`'\0'`) is encountered in
+ * `src`. It also puts a null byte (`'\0'`) at the end of the copy in `dst`.
+ * @param dst The string in which to copy `src`.
+ * @param src The string from which to copy into `dst`. It <b>MUST</b> be a
+ * C-String.
+ * @return `dst`.
+ * @warning This function is <b>VERY UNSAFE</b> !<br>If `src` is not a C-String,
+ * `ft_strcpy` will read further than src into the memory which can lead to a
+ * `SIGSEV`.<br>If `dst` is too short for `src`, ft_strcpy will try to copy
+ * anyway and it can lead to a `SIGSEV`.
+ * @author amassias (amassias@student.42lehavre.fr)
+ * @date 2023-11-22
+ */
+char		*ft_strcpy(
+				char *dst,
+				const char *src);
 
 /**
  * @brief Copies `src` to `dst`. Takes the full `size` of `dst` and guarantee
