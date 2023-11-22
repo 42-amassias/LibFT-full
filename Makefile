@@ -138,6 +138,11 @@ fclean: clean
 
 re: fclean all
 
+norminette:
+	@norminette | grep -Ev "^Error: WRONG_SCOPE_COMMENT|OK\!$$|Error\!$$" \
+		&& exit 1 \
+		|| exit 0
+
 # ############################################################################ #
 #                                                                              #
 # Binary / Library generation                                                  #
