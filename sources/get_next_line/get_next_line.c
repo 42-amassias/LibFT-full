@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 19:41:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/23 02:09:31 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/23 02:13:56 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,7 +200,8 @@ static char	*_get_next_line(
 		return (full_free(buffer_ptr), NULL);
 	if (ft_strchr(buffer_head, '\n'))
 		return (buffer_head);
-	line = _recursivly_read_fd(fd, ft_strlen(buffer_head), *buffer_ptr, *buffer_ptr);
+	line = _recursivly_read_fd(fd, ft_strlen(buffer_head), *buffer_ptr,
+			*buffer_ptr);
 	if (line == NULL)
 		return (full_free(buffer_ptr), free(buffer_head), NULL);
 	ft_memcpy(line, buffer_head, ft_strlen(buffer_head));
