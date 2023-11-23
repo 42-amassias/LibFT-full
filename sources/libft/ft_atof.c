@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:16:29 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/22 16:26:09 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:35:49 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ double	ft_atof(
 
 	integer = 0;
 	fract = 0;
+	sign = 1;
 	while (ft_isspace(*str))
 		++str;
 	if (*str == '-')
@@ -54,6 +55,8 @@ double	ft_atof(
 		integer = 10 * integer + (*str++) - '0';
 	if (*str++ == '.')
 		while (ft_isdigit(*str))
-			fract = fract / 10. + (*str++) - '0';
-	return (sign * (integer + fract / 10.));
+			fract = 10. * fract + (*str++) - '0';
+	while (fract >= 1. || -1. >= fract)
+		fract /= 10.;
+	return (sign * (integer + fract));
 }
