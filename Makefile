@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/22 19:50:34 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/23 02:05:36 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ FILES_SROUCES	:=							\
 	libft/ft_qsort							\
 	libft/ft_split							\
 	libft/ft_strchr							\
+	libft/ft_strcpy							\
 	libft/ft_strdup							\
 	libft/ft_striteri						\
 	libft/ft_strjoin						\
@@ -121,7 +122,8 @@ FILES_SROUCES	:=	$(FILES_SROUCES)		\
 FLAG__INCLUDES	:=	$(FLAG__INCLUDES)		\
 	-I$(INC_DIR)/get_next_line
 FILES_SROUCES	:=	$(FILES_SROUCES)		\
-	get_next_line/get_next_line
+	get_next_line/get_next_line				\
+	get_next_line/get_next_line_utils
 
 # ############################################################################ #
 #                                                                              #
@@ -165,4 +167,4 @@ $(TARGET): $(OBJS)
 	cp includes/libft/libft.h .
 
 %.o: %.c
-	$(CC) -c $< -o $@ $(DEFINES) $(FLAG__INCLUDES)
+	$(CC) -g -c $< -o $@ $(DEFINES) $(FLAG__INCLUDES)

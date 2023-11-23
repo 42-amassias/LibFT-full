@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/22 20:32:25 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/23 02:10:42 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -830,6 +830,7 @@ int			ft_printf(
 				...);
 
 /**
+ * @brief 
  * @param fd 
  * @return char* 
  * @author amassias (amassias@student.42lehavre.fr)
