@@ -12,7 +12,7 @@
 
 /**
  * @file get_next_line_utils.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-23
  * @copyright Copyright (c) 2023
  */

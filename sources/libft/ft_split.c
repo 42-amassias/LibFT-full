@@ -12,7 +12,7 @@
 
 /**
  * @file ft_split.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @copyright Copyright (c) 2023
  * @note This function is part of the original libft.
@@ -37,7 +37,7 @@
  * @param str A string.
  * @param c The separator.
  * @return how many tokens separated by `c` are in `str`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 static size_t		count_strings(
@@ -55,7 +55,7 @@ static size_t		count_strings(
  * @param c The separator.
  * @return A pointer to the charater following the substring within `str` or
  * `NULL` if an error occured.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @note If `*dst` is not `NULL`, it will have to be freed (man 3 free).
  */
@@ -69,7 +69,7 @@ static const char	*dup_until_c(
  * to `NULL`.
  * @param strs A pointer to a list of strings.
  * @param len The number of strings to free within `*strs`
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 static void			free_strs(

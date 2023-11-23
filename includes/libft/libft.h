@@ -6,12 +6,12 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/23 02:10:42 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/23 02:16:32 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @copyright Copyright (c) 2023
  */
@@ -37,7 +37,7 @@
 /**
  * @struct s_list
  * @brief A node of a sigly linked list.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 struct
@@ -76,7 +76,7 @@ typedef struct s_list	t_list;
  * <br>If `a` equals `b`, it will return `0`.
  * @param a A pointer to an element.
  * @param b A pointer to an element.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 typedef int				(*t_comparator)(void *, void *);
@@ -91,7 +91,7 @@ typedef int				(*t_comparator)(void *, void *);
  * @brief Tells whether or not `c` is a letter.
  * @param c A character.
  * @return Whether or not `c` is a letter.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_isalpha(
@@ -101,7 +101,7 @@ int			ft_isalpha(
  * @brief Tells whether or not `c` is a digit.
  * @param c A character.
  * @return Whether or not `c` is a digit.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_isdigit(
@@ -111,7 +111,7 @@ int			ft_isdigit(
  * @brief Tells whether or not `c` is a letter or a digit.
  * @param c A character.
  * @return Whether or not `c` is a letter or a digit.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_isalnum(
@@ -121,7 +121,7 @@ int			ft_isalnum(
  * @brief Tells whether or not `c` is an ascii character.
  * @param c A character.
  * @return Whether or not `c` is an ascii character.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_isascii(
@@ -131,7 +131,7 @@ int			ft_isascii(
  * @brief Tells whether or not `c` is printable.
  * @param c A character.
  * @return Whether or not `c` is printable.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_isprint(
@@ -141,7 +141,7 @@ int			ft_isprint(
  * @brief Tells whether or not `c` is a space.
  * @param c A character.
  * @return whether or not `c` is a space.
- * @author amassias (amssias@student.42lehavre.fr)
+ * @author Antoine Massias (amssias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_isspace(
@@ -151,7 +151,7 @@ int			ft_isspace(
  * @brief If `c` is a letter, converts it to uppercase.
  * @param c a character.
  * @return The transformes character.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_toupper(
@@ -161,7 +161,7 @@ int			ft_toupper(
  * @brief If `c` is a letter, converts it to lowercase.
  * @param c a character.
  * @return The transformes character.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_tolower(
@@ -177,7 +177,7 @@ int			ft_tolower(
  * @brief Calculates th length of `str`.
  * @param str A string.
  * @return The length of `str`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 size_t		ft_strlen(
@@ -189,7 +189,7 @@ size_t		ft_strlen(
  * @param c A byte.
  * @param n The ammount of bytes to set to `c`.
  * @return The `ptr` pointer.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		*ft_memset(
@@ -201,7 +201,7 @@ void		*ft_memset(
  * @brief Writes `n` zeros ('\0') to `ptr`.
  * @param ptr A pointer to a memory area.
  * @param n The ammount of bytes to set to zero.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_bzero(
@@ -215,7 +215,7 @@ void		ft_bzero(
  * @param src A pointer to a memory area.
  * @param n The ammount of bytes to copy.
  * @return The `dst` pointer.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		*ft_memcpy(
@@ -232,7 +232,7 @@ void		*ft_memcpy(
  * @param src A pointer to a memory area.
  * @param n The ammount of bytes to copy.
  * @return The `dst` pointer.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		*ft_memmove(
@@ -251,7 +251,7 @@ void		*ft_memmove(
  * `ft_strcpy` will read further than src into the memory which can lead to a
  * `SIGSEV`.<br>If `dst` is too short for `src`, ft_strcpy will try to copy
  * anyway and it can lead to a `SIGSEV`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-22
  */
 char		*ft_strcpy(
@@ -268,7 +268,7 @@ char		*ft_strcpy(
  * @param src A string.
  * @param size The length of the string `ft_strlcopy` tries to create.
  * @return The length of `src`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 size_t		ft_strlcpy(
@@ -288,7 +288,7 @@ size_t		ft_strlcpy(
  * @param src A string.
  * @param size The length of the string `ft_strlcat` tries to create.
  * @return The initial length of `dst` plus the length of `src`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 size_t		ft_strlcat(
@@ -303,7 +303,7 @@ size_t		ft_strlcat(
  * @param c A character.
  * @return A pointer to the first occurence of `c` in `str` if it exists,
  * `NULL` otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_strchr(
@@ -317,7 +317,7 @@ char		*ft_strchr(
  * @param c A character.
  * @return A pointer to the last occurence of `c` in `str` if it exists,
  * `NULL` otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_strrchr(
@@ -331,7 +331,7 @@ char		*ft_strrchr(
  * @param str_2 A string.
  * @param n The max ammount of characters to compare.
  * @return The lexical order of the two string.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_strncmp(
@@ -346,7 +346,7 @@ int			ft_strncmp(
  * @param c A byte.
  * @return A pointer to the first occurence of the byte `c` in `ptr` if it
  * exists, `NULL` otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		*ft_memchr(
@@ -361,7 +361,7 @@ void		*ft_memchr(
  * @param ptr_2 A memory area.
  * @param n The max ammount of bytes to compare.
  * @return The lexical order of the two memory area.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_memcmp(
@@ -374,7 +374,7 @@ int			ft_memcmp(
  * @param a A memory area.
  * @param b A memory area.
  * @param n The number of bytes to swap.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_memswap(
@@ -392,7 +392,7 @@ void		ft_memswap(
  * @return If `little` is an empty string, `big` is returned; if `little` occurs
  * nowhere in `big`, `NULL` is returned; otherwise a pointer to the first
  * character of the first occurrence of `little` is returned.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_strnstr(
@@ -404,7 +404,7 @@ char		*ft_strnstr(
  * @brief Allocates (with malloc(3)) and returns a copy of `str`.
  * @param str A string.
  * @return A copy of `str`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_strdup(
@@ -418,7 +418,7 @@ char		*ft_strdup(
  * @param start The start index of the substring in the string `str`.
  * @param len The maximum length of the substring.
  * @return The substring or `NULL` if the allocation fails.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_substr(
@@ -432,7 +432,7 @@ char		*ft_substr(
  * @param str_1 The prefix string.
  * @param str_2 The suffix string.
  * @return The new string or `NULL` if the allocation fails.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_strjoin(
@@ -447,7 +447,7 @@ char		*ft_strjoin(
  * @param set The delimiter character.
  * @return The array of new strings resulting from the split or `NULL` if the
  * allocation fails.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_strtrim(
@@ -462,7 +462,7 @@ char		*ft_strtrim(
  * @param delim_char The delimiter character.
  * @return The array of new strings resulting from the split or `NULL` if the
  * allocation fails.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		**ft_split(
@@ -475,7 +475,7 @@ char		**ft_split(
  * @param n The integer to convert.
  * @return The string representing the integer or `NULL` if the allocation
  * fails.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_itoa(
@@ -489,7 +489,7 @@ char		*ft_itoa(
  * @param f The function to apply to each character.
  * @return The string created from the successive applications of `f`. Returns
  * `NULL` if the allocation fails.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 char		*ft_strmapi(
@@ -502,7 +502,7 @@ char		*ft_strmapi(
  * to `f` to be modified if necessary.
  * @param str The string on which to iterate.
  * @param f The function to apply to each character.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_striteri(
@@ -520,7 +520,7 @@ void		ft_striteri(
  * integer.
  * @param str The string to be converted.
  * @return The converted value.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_atoi(
@@ -531,7 +531,7 @@ int			ft_atoi(
  * double.
  * @param str The string to be converted.
  * @return The converted value.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-22
  */
 double		ft_atof(
@@ -547,7 +547,7 @@ double		ft_atof(
  * @param nmemb The number of elements if the array.
  * @param size The size in bytes of each element.
  * @return Return a pointer to the allocated memory or NULL if case of error.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		*ft_calloc(
@@ -559,7 +559,7 @@ void		*ft_calloc(
  * @param a An integer.
  * @param b An integer.
  * @return The greatest of `a` and `b`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 long long	ft_max(
@@ -571,7 +571,7 @@ long long	ft_max(
  * @param a An integer.
  * @param b An integer.
  * @return The lowest of `a` and `b`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 long long	ft_min(
@@ -596,7 +596,7 @@ long long	ft_abs(
  * @brief Outputs the character `c` to the given file descriptor.
  * @param c The character to output.
  * @param fd The file descriptor on which to write.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_putchar_fd(
@@ -607,7 +607,7 @@ void		ft_putchar_fd(
  * @brief Outputs the string `str` to the given file descriptor.
  * @param str The string to output.
  * @param fd The file descriptor on which to write.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_putstr_fd(
@@ -619,7 +619,7 @@ void		ft_putstr_fd(
  * newline.
  * @param str 
  * @param fd 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_putendl_fd(
@@ -630,7 +630,7 @@ void		ft_putendl_fd(
  * @brief Outputs the signed integer `n` to the given file descriptor.
  * @param n The integer to output.
  * @param fd The file descriptor on which to write.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_putnbr_fd(
@@ -813,7 +813,7 @@ void		ft_putnbr_fd(
  * function.
  * @return On success, the total number of characters written is returned.<br>
  * If a writing error occurs, a negative number is returned.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-11
  */
 int			ft_fprintf(
@@ -833,7 +833,7 @@ int			ft_printf(
  * @brief 
  * @param fd 
  * @return char* 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-22
  * @todo Make documentation.
  */
@@ -852,7 +852,7 @@ char		*get_next_line(
  * The variable `next` is initialized to `NULL`.
  * @param content The content to create the node with.
  * @return The new node.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 t_list		*ft_lstnew(
@@ -862,7 +862,7 @@ t_list		*ft_lstnew(
  * @brief Adds the node `new` at the beginning of `list`.
  * @param list The address of a pointer to the first link of a list.
  * @param new The address of a pointer to the node to be added to the list.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_lstadd_front(
@@ -873,7 +873,7 @@ void		ft_lstadd_front(
  * @brief Counts the number of nodes in a list.
  * @param list The beginning of the list.
  * @return The length of the list.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int			ft_lstsize(
@@ -883,7 +883,7 @@ int			ft_lstsize(
  * @brief Returns the last node of the list.
  * @param list The beginning of the list.
  * @return Last node of the list.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 t_list		*ft_lstlast(
@@ -893,7 +893,7 @@ t_list		*ft_lstlast(
  * @brief Adds the node `new` at the end of the list.
  * @param list The address of a pointer to the first link of a list.
  * @param new The address of a pointer to the node to be added to the list.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_lstadd_back(
@@ -906,7 +906,7 @@ void		ft_lstadd_back(
  * memory of `next` must not be freed.
  * @param list The node to free.
  * @param del_fun The address of the function used to delete the content.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_lstdelone(
@@ -920,7 +920,7 @@ void		ft_lstdelone(
  * @param list The address of a pointer to a node.
  * @param del_fun The address of the function used to delete the content of the
  * node.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_lstclear(
@@ -932,7 +932,7 @@ void		ft_lstclear(
  * of each node.
  * @param list The address of a pointer to a node.
  * @param f The address of the function used to iterate on the list.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_lstiter(
@@ -949,7 +949,7 @@ void		ft_lstiter(
  * @param del_fun The address of the function used to delete the content of a
  * node if needed.
  * @return The new list or `NULL` if the allocation fail.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 t_list		*ft_lstmap(
@@ -970,7 +970,7 @@ t_list		*ft_lstmap(
  * @param nmemb The number of elements to sort.
  * @param size The size of one single element.
  * @param cmp The comparaison function.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void		ft_qsort(

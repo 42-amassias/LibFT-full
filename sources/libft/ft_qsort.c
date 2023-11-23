@@ -12,7 +12,7 @@
 
 /**
  * @file ft_qsort.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @copyright Copyright (c) 2023
  * @note This function is not part of the original libft.
@@ -42,7 +42,7 @@
  * @param cmp A comparator.
  * @return A pointer within `base` to the pivot (p).
  * @see t_comparator
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 static void	*_partition(

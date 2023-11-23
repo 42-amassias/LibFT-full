@@ -12,7 +12,7 @@
 
 /**
  * @file integer_printer.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-18
  * @copyright Copyright (c) 2023
  */
@@ -37,7 +37,7 @@
  * @param base 
  * @param n 
  * @return int 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-18
  * @todo Make documentation.
  */
@@ -50,7 +50,7 @@ static int	_len(
  * @param fd 
  * @param base 
  * @param n 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-18
  * @todo Make documentation.
  */
@@ -65,7 +65,7 @@ static void	_print_integer_fd(
  * @param fmt 
  * @param base 
  * @param n 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-18
  * @todo Make documentation.
  */

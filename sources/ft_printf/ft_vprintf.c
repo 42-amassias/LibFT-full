@@ -12,7 +12,7 @@
 
 /**
  * @file ft_vprintf.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-11
  * @copyright Copyright (c) 2023
  */
@@ -47,7 +47,7 @@
  * @param va_list A variadic list from which to pull data.
  * @param fmt The format to use to format the data.
  * @return The number of characters put onto the file descriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
 */
@@ -68,7 +68,7 @@ typedef int	(*t_type_printer)(int, va_list *, t_format *);
  * @param args A pointer to a variadic list from which to pull a number if
  * needed.
  * @param value_ptr A pointer to where to store the number read from `*str_ptr`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_atoi
  */
@@ -88,7 +88,7 @@ static void	_read_number(
  * @param args A variadic list from which to pull `width` and `precision` fields
  * if needed.
  * @return 0 on success, any other value if an error occured.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -105,7 +105,7 @@ static int	_read_format(
  * @param list A pointer to a variadic list from wich to pull data to format.
  * @param printers A list of functions to format each specifiers.
  * @return The number of characters put onto the file descriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -118,7 +118,7 @@ static int	_format(
 /**
  * @brief Builds a list of functions for each specifier.
  * @param printers The list to build.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */

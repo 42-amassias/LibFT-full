@@ -12,7 +12,7 @@
 
 /**
  * @file get_next_line.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-22
  * @copyright Copyright (c) 2023
  */
@@ -51,7 +51,7 @@
  * @param n 
  * @param line_length 
  * @return char* 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-22
  * @todo Make documentation.
  */
@@ -68,7 +68,7 @@ static char	*_make_line(
  * @param last_buffer 
  * @param static_buffer 
  * @return char* 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-22
  * @todo Make documentation.
  */
@@ -83,7 +83,7 @@ static char	*_recursivly_read_fd(
  * @param fd 
  * @param buffer 
  * @return char* 
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-22
  * @todo Make documentation.
  */

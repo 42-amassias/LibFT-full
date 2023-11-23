@@ -12,7 +12,7 @@
 
 /**
  * @file ft_putnbr_fd.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @copyright Copyright (c) 2023
  * @note This function is part of the original libft.
@@ -36,7 +36,7 @@
  * @brief Outputs the unsigned integer n to the given file descriptor.
  * @param n The integer to output.
  * @param fd The file descriptor on which to write.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 static void	_ft_putnbr_fd(

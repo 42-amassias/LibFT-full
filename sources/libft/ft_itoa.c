@@ -12,7 +12,7 @@
 
 /**
  * @file ft_itoa.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @copyright Copyright (c) 2023
  * @note This function is part of the original libft.
@@ -37,7 +37,7 @@
  * @param n The number to write.
  * @param len The size of `buf`.
  * @param buf A buffer in which to write `n`.
- * @author amassias (amassias@42lehavre.fr)
+ * @author Antoine Massias (amassias@42lehavre.fr)
  * @date 2023-11-06
  */
 static void	itoa(

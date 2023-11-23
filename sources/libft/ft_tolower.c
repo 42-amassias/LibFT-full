@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /**
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @copyright Copyright (c) 2023
  * @note This function is part of the original libft.

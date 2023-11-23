@@ -12,7 +12,7 @@
 
 /**
  * @file utils.h
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @copyright Copyright (c) 2023
  */
@@ -39,7 +39,7 @@
 /**
  * @brief Bitflag that indicates if the formatter should use the `left justify`
  * (`-`) flag.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see s_format
  * @see ft_fprintf
@@ -49,7 +49,7 @@
 /**
  * @brief Bitflag that indicates if the formatter should use the `force sign`
  * (`+`) flag.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see s_format
  * @see ft_fprintf
@@ -59,7 +59,7 @@
 /**
  * @brief Bitflag that indicates if the formatter should use the `align sign`
  * (`[space]`) flag.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see s_format
  * @see ft_fprintf
@@ -69,7 +69,7 @@
 /**
  * @brief Bitflag that indicates if the formatter should use the `prefix` (`#`)
  * flag.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see s_format
  * @see ft_fprintf
@@ -79,7 +79,7 @@
 /**
  * @brief Bitflag that indicates if the formatter should use the `zero padding`
  * (`0`) flag.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see s_format
  * @see ft_fprintf
@@ -89,7 +89,7 @@
 /**
  * @brief Bitflag that indicates if the formatter should use the `precision`
  * field.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see s_format
  * @see ft_fprintf
@@ -106,7 +106,7 @@
  * @struct s_format
  * @brief This structure represents a format. It will help the formatter to
  * contruct the correct string.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -137,7 +137,7 @@ struct s_format {
 /**
  * @struct s_number_base
  * @brief This structure represents a base.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-16
  */
 struct s_number_base {
@@ -194,7 +194,7 @@ typedef struct s_number_base	t_number_base;
  * @param fd The file descriptor on which to put `count` repetitions of `c`.
  * @param c The chatacter to repeat `count` times.
  * @param count The number of time to repeat `c`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 void	putnchar_fd(
@@ -209,7 +209,7 @@ void	putnchar_fd(
  * string.
  * @param fmt The format to use.
  * @param args A variadic list of arguments to format.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-11
  * @see ft_fprintf
  */
@@ -228,7 +228,7 @@ int		ft_vprintf(
  * @brief Tells if `left justify` flag is set for the formatter.
  * @param fmt A format.
  * @return 0 if the flag is not set, any other value otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int		fmt__left_justify(
@@ -238,7 +238,7 @@ int		fmt__left_justify(
  * @brief Tells if `force sign` flag is set for the formatter.
  * @param fmt A format.
  * @return 0 if the flag is not set, any other value otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int		fmt__force_sign(
@@ -248,7 +248,7 @@ int		fmt__force_sign(
  * @brief Tells if `align sign` flag is set for the formatter.
  * @param fmt A format.
  * @return 0 if the flag is not set, any other value otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int		fmt__align_sign(
@@ -258,7 +258,7 @@ int		fmt__align_sign(
  * @brief Tells if `hex prefix` flag is set for the formatter.
  * @param fmt A format.
  * @return 0 if the flag is not set, any other value otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int		fmt__prefix(
@@ -268,7 +268,7 @@ int		fmt__prefix(
  * @brief Tells if `zero padding` flag is set for the formatter.
  * @param fmt A format.
  * @return 0 if the flag is not set, any other value otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int		fmt__zero_padding(
@@ -278,7 +278,7 @@ int		fmt__zero_padding(
  * @brief Tells if `use precision` flag is set for the formatter.
  * @param fmt A format.
  * @return 0 if the flag is not set, any other value otherwise.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */
 int		fmt__use_precision(
@@ -297,7 +297,7 @@ int		fmt__use_precision(
  * @param fmt The format to use.
  * @param str The string to format.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  * @see s_format
@@ -315,7 +315,7 @@ int		string_printer_fd(
  * @param base The base to use.
  * @param n The decimal number to format.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  * @see s_format
@@ -340,7 +340,7 @@ int		integer_printer_fd(
  * formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -355,7 +355,7 @@ int		printer__char(
  * @param list The variadic list from which to pull the string to be formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -371,7 +371,7 @@ int		printer__string(
  * formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -387,7 +387,7 @@ int		printer__pointer(
  * formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -402,7 +402,7 @@ int		printer__decimal(
  * @param list The variadic list from which to pull the integer to be formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -418,7 +418,7 @@ int		printer__integer(
  * formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -435,7 +435,7 @@ int		printer__unsigned(
  * number to be formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */
@@ -452,7 +452,7 @@ int		printer__lo_hex(
  * number to be formatted.
  * @param fmt The format to use.
  * @return The number of characters put onto the file decriptor `fd`.
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  * @see ft_fprintf
  */

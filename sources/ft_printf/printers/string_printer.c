@@ -12,7 +12,7 @@
 
 /**
  * @file string_printer.c
- * @author amassias (amassias@student.42lehavre.fr)
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-19
  * @copyright Copyright (c) 2023
  */
@@ -35,7 +35,7 @@
  * @brief Puts at `len` characters of `str` to the file descriptor `fd`.
  * @param str The string to print.
  * @param len The number of characters to print.
- * @author amassias (amassias@42lehavre.fr)
+ * @author Antoine Massias (amassias@42lehavre.fr)
  * @date 2023-11-06
  * @warning This funciton is very unsafe, it does not check if `str` is smaller
  * than `len` and thus will try to print characters after `str`.
