@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/26 02:31:08 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/26 02:35:15 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ FILES_SROUCES	:=							\
 	libft/ft_qsort							\
 	libft/ft_split							\
 	libft/ft_strchr							\
+	libft/ft_strcmp							\
 	libft/ft_strcpy							\
 	libft/ft_strdup							\
 	libft/ft_striteri						\

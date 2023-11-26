@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/26 02:22:56 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/26 02:30:28 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -325,7 +325,19 @@ char		*ft_strrchr(
 				int c);
 
 /**
- * @brief Compares with the lexical order the `n` first characters of `str_1`
+ * @brief Compares with the lexical order of characters of `str_1` and `str_2`.
+ * @param str_1 A string.
+ * @param str_2 A string.
+ * @return The lexical order of the two string.
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
+ * @date 2023-11-26
+ */
+int			ft_strcmp(
+				const char *str_1,
+				const char *str_2);
+
+/**
+ * @brief Compares with the lexical order the of `n` first characters of `str_1`
  * and `str_2`.
  * @param str_1 A string.
  * @param str_2 A string.
