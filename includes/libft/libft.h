@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/23 02:16:32 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/26 02:22:56 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -593,6 +593,43 @@ long long	ft_abs(
 /* ************************************************************************** */
 
 /**
+ * @brief Outputs the character `c` to the standard output.
+ * @param c The character to output.
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
+ * @date 2023-11-26
+ */
+void		ft_putchar(
+				char c);
+
+/**
+ * @brief Outputs the string `str` to the standard output.
+ * @param str The string to output.
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
+ * @date 2023-11-26
+ */
+void		ft_putstr(
+				const char *str);
+
+/**
+ * @brief Outputs the string `str` to the standard output followed by a newline.
+ * @param str The string to output.
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
+ * @date 2023-11-26
+ */
+void		ft_putendl_fd(
+				const char *str,
+				int fd);
+
+/**
+ * @brief Outputs the signed integer `n` to the standard output.
+ * @param n The integer to output.
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
+ * @date 2023-11-26
+ */
+void		ft_putnbr(
+				signed int n);
+
+/**
  * @brief Outputs the character `c` to the given file descriptor.
  * @param c The character to output.
  * @param fd The file descriptor on which to write.
@@ -617,8 +654,8 @@ void		ft_putstr_fd(
 /**
  * @brief Outputs the string `str` to the given file descriptor followed by a
  * newline.
- * @param str 
- * @param fd 
+ * @param str The string to output.
+ * @param fd The file descriptor on which to write.
  * @author Antoine Massias (amassias@student.42lehavre.fr)
  * @date 2023-11-06
  */

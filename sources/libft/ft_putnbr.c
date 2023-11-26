@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 22:05:41 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/26 02:24:45 by amassias         ###   ########.fr       */
+/*   Created: 2023/11/26 02:23:50 by amassias          #+#    #+#             */
+/*   Updated: 2023/11/26 02:25:26 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_putnbr_fd.c
+ * @file ft_putnbr.c
  * @author Antoine Massias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
+ * @date 2023-11-26
  * @copyright Copyright (c) 2023
- * @note This function is part of the original libft.
+ * @note This function is not part of the original libft.
  */
 
 /* ************************************************************************** */
@@ -33,15 +33,13 @@
 /* ************************************************************************** */
 
 /**
- * @brief Outputs the unsigned integer n to the given file descriptor.
+ * @brief Outputs the unsigned integer n to the standard output.
  * @param n The integer to output.
- * @param fd The file descriptor on which to write.
  * @author Antoine Massias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
+ * @date 2023-11-26
  */
-static void	_ft_putnbr_fd(
-				unsigned int n,
-				int fd);
+static void	_ft_putnbr(
+				unsigned int n);
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -49,19 +47,18 @@ static void	_ft_putnbr_fd(
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putnbr_fd(
-			signed int _n,
-			int fd)
+void	ft_putnbr(
+			signed int _n)
 {
 	long	n;
 
 	n = _n;
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		ft_putchar('-', STDOUT_FILENO);
 		n = -n;
 	}
-	_ft_putnbr_fd(n, fd);
+	_ft_putnbr(n);
 }
 
 /* ************************************************************************** */
@@ -70,11 +67,10 @@ void	ft_putnbr_fd(
 /*                                                                            */
 /* ************************************************************************** */
 
-static void	_ft_putnbr_fd(
-				unsigned int n,
-				int fd)
+static void	_ft_putnbr(
+				unsigned int n)
 {
 	if (n > 9)
-		_ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd('0' + n % 10, fd);
+		_ft_putnbr(n / 10);
+	ft_putchar('0' + n % 10);
 }
