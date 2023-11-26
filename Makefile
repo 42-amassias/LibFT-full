@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/23 02:05:36 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/26 02:31:08 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,9 +61,13 @@ FILES_SROUCES	:=							\
 	libft/ft_memset							\
 	libft/ft_memswap						\
 	libft/ft_min							\
+	libft/ft_putchar						\
 	libft/ft_putchar_fd						\
+	libft/ft_putendl						\
 	libft/ft_putendl_fd						\
+	libft/ft_putnbr							\
 	libft/ft_putnbr_fd						\
+	libft/ft_putstr							\
 	libft/ft_putstr_fd						\
 	libft/ft_qsort							\
 	libft/ft_split							\
