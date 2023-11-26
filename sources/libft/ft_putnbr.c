@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 02:23:50 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/26 02:25:26 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/26 02:31:58 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_putnbr(
 	n = _n;
 	if (n < 0)
 	{
-		ft_putchar('-', STDOUT_FILENO);
+		ft_putchar('-');
 		n = -n;
 	}
 	_ft_putnbr(n);
