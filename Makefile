@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/26 02:35:15 by amassias         ###   ########.fr        #
+#    Updated: 2023/11/26 05:48:26 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -140,19 +140,40 @@ OBJS	=	$(addprefix $(SRC_DIR)/,$(addsuffix .o,$(FILES_SROUCES)))
 
 # ############################################################################ #
 #                                                                              #
+# Terminal manipulations                                                       #
+#                                                                              #
+# ############################################################################ #
+
+TERM_RESET			=	\033[0m
+TERM_BLACK			=	\033[30m
+TERM_RED			=	\033[31m
+TERM_GREEN			=	\033[32m
+TERM_YELLOW			=	\033[33m
+TERM_BLUE			=	\033[34m
+TERM_MAGENTA		=	\033[35m
+TERM_CYAN			=	\033[36m
+TERM_WHITE			=	\033[37m
+
+TERM_UP				=	\033[1A
+TERM_CLEAR_LINE		=	\033[2K\r
+
+# ############################################################################ #
+#                                                                              #
 # Phony rules                                                                  #
 #                                                                              #
 # ############################################################################ #
 
-.PHONY: all clean fclean re norminette
+.PHONY: all clean fclean re norminette _header _obj_header _obj_footer
 
 all: $(TARGET)
 
 clean:
-	rm -rf $(OBJS)
+	@printf "$(TERM_YELLOW)Removing \"%s\"...\n$(TERM_RESET)" $(TARGET)
+	@rm -rf $(OBJS)
 
 fclean: clean
-	rm -f $(TARGET)
+	@printf "$(TERM_YELLOW)Removing %d objects...\n$(TERM_RESET)" $(words $(OBJS))
+	@rm -f $(TARGET)
 
 re: fclean all
 
@@ -161,15 +182,28 @@ norminette:
 		&& exit 1 \
 		|| exit 0
 
+_header:
+	@printf "$(TERM_GREEN)Welcome to $(TERM_BLUE)\"%s\"$(TERM_GREEN) builder !\n$(TERM_RESET)" $(TARGET)
+
+_obj_header:
+	@printf "$(TERM_MAGENTA)Building objects$(TERM_RESET)...\n"
+
+_obj_footer:
+	@printf "$(TERM_UP)$(TERM_CLEAR_LINE)$(TERM_GREEN)Done building $(TERM_BLUE)%d$(TERM_GREEN) object(s) !\n$(TERM_RESET)" $(words $(OBJS))
+
 # ############################################################################ #
 #                                                                              #
 # Binary / Library generation                                                  #
 #                                                                              #
 # ############################################################################ #
 
-$(TARGET): $(OBJS)
-	ar -rcs $@ $^
-	cp includes/libft/libft.h .
+$(TARGET): _header _obj_header $(OBJS) _obj_footer
+	@printf "$(TERM_MAGENTA)Making archive $(TERM_BLUE)\"%s\"$(TERM_MAGENTA)...$(TERM_RESET)" $@
+	@ar -rcs $@ $(OBJS)
+	@cp includes/libft/libft.h .
+	@printf "$(TERM_CLEAR_LINE)$(TERM_GREEN)Done building archive $(TERM_BLUE)\"%s\"$(TERM_GREEN) !\n$(TERM_RESET)" $@
 
 %.o: %.c
-	$(CC) -g -c $< -o $@ $(DEFINES) $(FLAG__INCLUDES)
+	@printf "$(TERM_CLEAR_LINE)$(TERM_MAGENTA)Compiling $(TERM_BLUE)\"%s\"$(TERM_MAGENTA)...\n$(TERM_RESET)" $@
+	@$(CC) -g -c $< -o $@ $(DEFINES) $(FLAG__INCLUDES)
+	@printf "$(TERM_UP)"
