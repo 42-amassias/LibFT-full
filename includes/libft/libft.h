@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 12:34:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/26 02:30:28 by amassias         ###   ########.fr       */
+/*   Updated: 2023/11/29 05:01:41 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +209,7 @@ void		ft_bzero(
 				size_t n);
 
 /*!
- * @brief Copies `n` bytes of `src` to `dst`. The memory areas mus not overlap.
+ * @brief Copies `n` bytes of `src` to `dst`. The memory areas must not overlap.
  * Use `ft_memmove` if the memory areas do overlap.
  * @param dst A pointer to a memory area.
  * @param src A pointer to a memory area.
@@ -219,8 +219,8 @@ void		ft_bzero(
  * @date 2023-11-06
  */
 void		*ft_memcpy(
-				void *dst,
-				const void *src,
+				void *restrict dst,
+				const void *restrict src,
 				size_t n);
 
 /**
@@ -275,6 +275,23 @@ size_t		ft_strlcpy(
 				char *dst,
 				const char *src,
 				size_t size);
+
+/**
+ * @brief Concatenate `first` and `second`.
+ * @param first The first bit of the resulting string. Must be a C-String.
+ * @param second The second bit of the resulting string. Must be a C-String.
+ * @return A pointer to a dynamically allocated (man 3 malloc) C-String that
+ * will contain the concatenation of `first` and `second` or `NULL` if an error
+ * occured.
+ * @warning `first` and `second` should ABSOLUTELY be C-Strings.
+ * @note It's up to the user of this function to release (man 3 free) the
+ * dynamically allocated string.
+ * @author Antoine Massias (amassias@student.42lehavre.fr)
+ * @date 2023-11-29
+ */
+char		*ft_strcat(
+				const char *first,
+				const char *second);
 
 /**
  * @brief Concatenate `str` to `dst`. Takes the full `size` of `dst`

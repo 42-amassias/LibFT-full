@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 13:08:10 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/29 05:01:24 by amassias         ###   ########.fr       */
+/*   Created: 2023/11/29 04:50:16 by amassias          #+#    #+#             */
+/*   Updated: 2023/11/29 04:58:56 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_memcpy.c
+ * @file ft_strcat.c
  * @author Antoine Massias (amassias@student.42lehavre.fr)
- * @date 2023-11-06
+ * @date 2023-11-29
  * @copyright Copyright (c) 2023
- * @note This function is part of the original libft.
+ * @note This function is not part of the original libft.
  */
 
 /* ************************************************************************** */
@@ -32,14 +32,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(
-			void *restrict dst,
-			const void *restrict src,
-			size_t n)
+char	*ft_strcat(
+			const char *first,
+			const char *second)
 {
-	if (!dst && !src)
+	size_t	length__first;
+	size_t	length__second;
+	char	*res;
+
+	length__first = ft_strlen(first);
+	length__second = ft_strlen(second);
+	res = (char *) malloc(length__first + length__second + 1);
+	if (res == NULL)
 		return (NULL);
-	while (n--)
-		((char *)dst)[n] = ((char *)src)[n];
-	return (dst);
+	ft_memcpy(res, first, length__first);
+	ft_memcpy(res + length__first, second, length__second);
+	res[length__first + length__second] = '\0';
+	return (res);
 }
