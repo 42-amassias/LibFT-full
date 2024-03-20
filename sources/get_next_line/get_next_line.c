@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 19:41:25 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/23 20:46:43 by amassias         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:33:00 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@
  * @brief 
  * @param buffer 
  * @param static_buffer 
- * @param n 
  * @param line_length 
  * @return char* 
  * @author Antoine Massias (amassias@student.42lehavre.fr)
@@ -58,7 +57,6 @@
 static char	*_make_line(
 				char *buffer,
 				char *static_buffer,
-				size_t n,
 				size_t line_length);
 
 /**
@@ -126,7 +124,6 @@ char	*get_next_line(
 static char	*_make_line(
 				char *buffer,
 				char *static_buffer,
-				size_t n,
 				size_t line_length)
 {
 	char	*line;
@@ -168,10 +165,10 @@ static char	*_recursivly_read_fd(
 		buffer[n] = '\0';
 	if (n == 0)
 		return (free(buffer),
-			_make_line(last_buffer, static_buffer, n, line_length));
+			_make_line(last_buffer, static_buffer, line_length));
 	if (ft_strchr(buffer, '\n'))
 	{
-		line = _make_line(buffer, static_buffer, n, line_length);
+		line = _make_line(buffer, static_buffer, line_length);
 		return (free(buffer), line);
 	}
 	line = _recursivly_read_fd(fd, line_length + n, buffer, static_buffer);

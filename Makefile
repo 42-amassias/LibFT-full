@@ -6,7 +6,7 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2023/11/29 04:58:23 by amassias         ###   ########.fr        #
+#    Updated: 2024/03/20 13:32:15 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ INC_DIR			:=	includes
 
 TARGET			:=	libftfull.a
 
-CC				:=	cc
+CC				:=	gcc
 
 # ############################################################################ #
 #                                                                              #
@@ -206,5 +206,5 @@ $(TARGET): _header _obj_header $(OBJS) _obj_footer
 
 %.o: %.c
 	@printf "$(TERM_CLEAR_LINE)$(TERM_MAGENTA)Compiling $(TERM_BLUE)\"%s\"$(TERM_MAGENTA)...\n$(TERM_RESET)" $@
-	@$(CC) -g -c $< -o $@ $(DEFINES) $(FLAG__INCLUDES)
+	@$(CC) -Wall -Wextra -Werror -c $< -o $@ $(DEFINES) $(FLAG__INCLUDES)
 	@printf "$(TERM_UP)"

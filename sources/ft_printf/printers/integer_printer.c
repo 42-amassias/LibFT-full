@@ -6,7 +6,7 @@
 /*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 14:55:28 by amassias          #+#    #+#             */
-/*   Updated: 2023/11/19 19:50:49 by amassias         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:32:40 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ static int	_len(
 	if (_n < 0 && base->has_sign)
 		_n = ~_n + 1;
 	n = _n;
-	while (n >= base->base.size)
+	while (n >= (unsigned long long)base->base.size)
 	{
 		++len;
 		n /= base->base.size;
@@ -143,7 +143,7 @@ static void	_print_integer_fd(
 				t_number_base *base,
 				unsigned long long n)
 {
-	if (n >= base->base.size)
+	if (n >= (unsigned long long)base->base.size)
 		_print_integer_fd(fd, base, n / base->base.size);
 	ft_putchar_fd(base->base.str[n % base->base.size], fd);
 }
