@@ -6,9 +6,18 @@
 #    By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 09:50:29 by amassias          #+#    #+#              #
-#    Updated: 2024/03/20 13:32:15 by amassias         ###   ########.fr        #
+#    Updated: 2024/03/22 08:17:23 by amassias         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# ############################################################################ #
+#                                                                              #
+# Tools                                                                        #
+#                                                                              #
+# ############################################################################ #
+
+RM				=	/usr/bin/rm -f
+ECHO			=	/usr/bin/echo
 
 # ############################################################################ #
 #                                                                              #
@@ -170,18 +179,18 @@ all: $(TARGET)
 
 clean:
 	@printf "$(TERM_YELLOW)Removing \"%s\"...\n$(TERM_RESET)" $(TARGET)
-	@rm -rf $(OBJS)
+	@$(RM) -r $(OBJS)
 
 fclean: clean
 	@printf "$(TERM_YELLOW)Removing %d objects...\n$(TERM_RESET)" $(words $(OBJS))
-	@rm -f $(TARGET)
+	@$(RM) $(TARGET)
 
 re: fclean all
 
 norminette:
-	@norminette | grep -Ev "^Error: WRONG_SCOPE_COMMENT|OK\!$$|Error\!$$" \
-		&& exit 1 \
-		|| exit 0
+	@norminette $(SRCDIR) $(INCDIR) | grep -Ev '^Notice|OK!$$'	\
+	&& $(ECHO) -e '\033[1;31mNorminette KO!'					\
+	|| $(ECHO) -e '\033[1;32mNorminette OK!'
 
 _header:
 	@printf "$(TERM_GREEN)Welcome to $(TERM_BLUE)\"%s\"$(TERM_GREEN) builder !\n$(TERM_RESET)" $(TARGET)
