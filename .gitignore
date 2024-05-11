@@ -1,4 +1,5 @@
+*.o
 libftfull.a
 /libft.h
-*.o
-doc
+/doc
+/build
