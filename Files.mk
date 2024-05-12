@@ -15,7 +15,7 @@ FILES	=																	\
 	libft/ft_memmove libft/ft_lstsize libft/ft_strlcat						\
 	libft/ft_lstadd_front libft/ft_strtrim libft/ft_putnbr libft/ft_strmapi	\
 	get_next_line/get_next_line_utils get_next_line/get_next_line			\
-	ft_printf/utils ft_printf/ft_printf ft_printf/ft_vdprintf				\
+	ft_printf/utils ft_printf/ft_printf ft_printf/vdprintf					\
 	ft_printf/printers/string_printer ft_printf/printers/integer_printer	\
 	ft_printf/specifiers/pointer ft_printf/specifiers/hex_up				\
 	ft_printf/specifiers/integer ft_printf/specifiers/char					\

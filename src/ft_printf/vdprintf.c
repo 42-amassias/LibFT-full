@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vdprintf.c                                      :+:      :+:    :+:   */
+/*   vdprintf.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Antoine Massias <massias.antoine.pro@gm    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 08:09:45 by amassias          #+#    #+#             */
-/*   Updated: 2024/05/11 18:01:31 by Antoine Mas      ###   ########.fr       */
+/*   Updated: 2024/05/12 16:45:23 by Antoine Mas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_vprintf.c
+ * @file vdprintf.c
  * @author Antoine Massias (massias.antoine.pro@gmail.com)
  * @date 2023-11-11
  * @copyright Copyright (c) 2023
