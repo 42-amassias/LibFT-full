@@ -6,7 +6,7 @@
 /*   By: Antoine Massias <massias.antoine.pro@gm    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 05:25:18 by amassias          #+#    #+#             */
-/*   Updated: 2024/05/11 17:58:22 by Antoine Mas      ###   ########.fr       */
+/*   Updated: 2024/05/12 16:52:27 by Antoine Mas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+#include <stdint.h>
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -50,9 +52,9 @@ int	printer__pointer(
 	{.size = sizeof(PREFIX) - 1, .str = PREFIX},
 		0,
 	};
-	long long				n;
+	uintptr_t				n;
 
-	n = (long long) va_arg(args, void *);
+	n = (uintptr_t) va_arg(args, void *);
 	if (n == 0)
 		return (string_printer_fd(fd, fmt, "(nil)"));
 	fmt->flags |= FMT_FLAG__PREFIX;
