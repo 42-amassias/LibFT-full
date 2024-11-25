@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Antoine Massias <massias.antoine.pro@gm    +#+  +:+       +#+        */
+/*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 04:16:23 by amassias          #+#    #+#             */
-/*   Updated: 2024/05/11 17:50:31 by Antoine Mas      ###   ########.fr       */
+/*   Updated: 2024/11/25 18:23:32 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,8 @@
  * @date 2023-11-06
  * @see ft_fprintf
  */
-struct s_format {
+struct s_format
+{
 	/**
 	 * @brief The `width` field.
 	 * @see ft_fprintf
@@ -138,8 +139,10 @@ struct s_format {
  * @author Antoine Massias (massias.antoine.pro@gmail.com)
  * @date 2023-11-16
  */
-struct s_number_base {
-	struct s_base {
+struct s_number_base
+{
+	struct s_base
+	{
 		/**
 		 * @brief The number of digits in this base.
 		 */
@@ -149,7 +152,8 @@ struct s_number_base {
 		 */
 		const char		*str;
 	}	base;
-	struct s_prefix {
+	struct s_prefix
+	{
 		/**
 		 * @brief The numbers of characters in the prefix.
 		 */
@@ -179,6 +183,19 @@ typedef struct s_format			t_format;
  * @see s_number_base
  */
 typedef struct s_number_base	t_number_base;
+
+/**
+ * @typedef t_type_printer
+ * @brief Function callback type that formats a specifier.
+ * @param fd The file descriptor on which to put the formatted data.
+ * @param va_list A variadic list from which to pull data.
+ * @param fmt The format to use to format the data.
+ * @return The number of characters put onto the file descriptor `fd`.
+ * @author Antoine Massias (massias.antoine.pro@gmail.com)
+ * @date 2023-11-06
+ * @see ft_fprintf
+*/
+typedef int						(*t_type_printer)(int, va_list, t_format *);
 
 /* ************************************************************************** */
 /*                                                                            */

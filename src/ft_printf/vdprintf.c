@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vdprintf.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Antoine Massias <massias.antoine.pro@gm    +#+  +:+       +#+        */
+/*   By: amassias <amassias@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 08:09:45 by amassias          #+#    #+#             */
-/*   Updated: 2024/05/12 16:45:23 by Antoine Mas      ###   ########.fr       */
+/*   Updated: 2024/11/25 18:23:09 by amassias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,6 @@
 
 #define SPECIFIERS "cspdiuxX%"
 #define FLAGS "-+ #0"
-
-/* ************************************************************************** */
-/*                                                                            */
-/* Types                                                                      */
-/*                                                                            */
-/* ************************************************************************** */
-
-/**
- * @typedef t_type_printer
- * @brief Function callback type that formats a specifier.
- * @param fd The file descriptor on which to put the formatted data.
- * @param va_list A variadic list from which to pull data.
- * @param fmt The format to use to format the data.
- * @return The number of characters put onto the file descriptor `fd`.
- * @author Antoine Massias (massias.antoine.pro@gmail.com)
- * @date 2023-11-06
- * @see ft_fprintf
-*/
-typedef int	(*t_type_printer)(int, va_list, t_format *);
 
 /* ************************************************************************** */
 /*                                                                            */
